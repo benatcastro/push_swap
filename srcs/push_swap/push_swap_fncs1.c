@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_fncs1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:30:21 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/19 02:32:35 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	ft_sa(t_stack **head_a)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*aux;
 
-	(void)stack_b;
-	ft_check_args(argc, argv);
-	ft_stack_init(&stack_a, &argv[1]);
-	ft_sa(&stack_a);
-	ft_show_list(&stack_a);
+	ft_putstr_fd("sa\n", 1);
+	if (ft_stack_size(head_a) <= 1)
+		return ;
+	aux = (*head_a);
+	(*head_a) = (*head_a)->before;
+	aux->before = aux->next;
 }

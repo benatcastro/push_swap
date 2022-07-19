@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:30:21 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/19 02:29:00 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	ft_show_list(t_stack **head)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*aux;
 
-	(void)stack_b;
-	ft_check_args(argc, argv);
-	ft_stack_init(&stack_a, &argv[1]);
-	ft_sa(&stack_a);
-	ft_show_list(&stack_a);
+	aux = (*head);
+	while (aux)
+	{
+		printf("(%d)\n", aux->n);
+		aux = aux->next;
+	}
+}
+
+int	ft_stack_size(t_stack **head)
+{
+	t_stack	*aux;
+	int		i;
+
+	i = 0;
+	aux = (*head);
+	while (aux)
+	{
+		aux = aux->next;
+		i++;
+	}
+	return (i);
 }

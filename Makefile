@@ -17,19 +17,15 @@ SRC_DIR = srcs/
 OBJ_DIR = objs/
 INC_DIR = includes/
 LIB_DIR = libraries/
-
-#---------FILES----------------
-
-FILES_PUSH_SWAP = main
-
+PROJECT_DIR = $(SRC_DIR)$(NAME)/
 
 #---------------PREFIX and SUFFIX-----------------
 
-SRC = $(addprefix $(SRC_DIR)push_swap/, $(addsuffix .c, $(FILES_PUSH_SWAP)))
 
 #OBJF = .cache_exists
-
 all: push_swap
+
+42lib: libft
 	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)*
 	@ranlib $(LIB_DIR)$(LIB_NAME)
 	@echo "42 Lib Compiled"
@@ -37,9 +33,24 @@ all: push_swap
 mk_dirs:
 	@mkdir -p $(LIB_DIR)
 	@mkdir -p $(OBJ_DIR)
-push_swap: libft
-	@$(CC) $(CFLAGS) $(SRC) -I $(INC_DIR) -o $(NAME)
 
+push_swap: 42lib
+	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	@echo "Push_swap Compiled"
+
+sanitize: 42lib
+	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	@echo "Push_swap with sanitize Compiled"
+	@clear
+	@./$(NAME) 1 2 3 4 5
+
+run: all
+	@clear
+	@./$(NAME) 1 2 3 4 5
+
+valgrind:
+	@clear
+	@$(VALGRIND) ./$(NAME) 1 2 3 4 5
 libft: mk_dirs
 	@make -C srcs/libft
 	@clear

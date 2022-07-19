@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:30:21 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/19 00:21:13 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	ft_check_args(int count, char **args)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	int	i;
+	int	j;
 
-	(void)stack_b;
-	ft_check_args(argc, argv);
-	ft_stack_init(&stack_a, &argv[1]);
-	ft_sa(&stack_a);
-	ft_show_list(&stack_a);
+	i = 0;
+	if (count <= 1)
+	{
+		ft_putstr_fd("Error, missing arguments\n", 1);
+		exit (EXIT_FAILURE);
+	}
+	while (args[++i])
+	{
+		j = -1;
+		while (args[i][++j])
+		{
+			if (!ft_isdigit(args[i][j]))
+			{
+				ft_putstr_fd("Error, argument number ", 1);
+				ft_putnbr_fd(i, 1);
+				ft_putstr_fd(" isn't a digit\n", 1);
+				exit (EXIT_FAILURE);
+			}
+		}
+	}
 }
