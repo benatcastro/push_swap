@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 18:25:53 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 19:44:49 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,17 @@ void	ft_create_node(t_stack **head, int n)
 {
 	t_stack	*node;
 
-	node = malloc(sizeof(t_stack));
+	node = ft_calloc(1, sizeof(t_stack));
 	node->n = n;
 	node->next = NULL;
 	node->before = NULL;
-	ft_addstack(head, node);
+	ft_addnode(head, node);
 }
 
-void	ft_addstack(t_stack **head, t_stack *node)
+void	ft_addnode(t_stack **head, t_stack *node)
 {
 	t_stack		*aux;
+	t_stack		*last;
 	static int	i;
 
 	if (i == 0)
@@ -51,9 +52,15 @@ void	ft_addstack(t_stack **head, t_stack *node)
 		return ;
 	}
 	aux = (*head);
+	last = ft_lastnode(head);
 	while (aux->next)
+	{
+		printf("test\n");
 		aux = aux->next;
+	}
 	aux->next = node;
 	node->before = aux;
-	node->before->n = aux->n;
+	(*head)->before = last;
+	//last->next = (*head);
 }
+

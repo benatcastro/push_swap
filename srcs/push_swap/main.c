@@ -18,9 +18,14 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	(void)stack_b;
+	stack_a = ft_calloc(1, sizeof(t_stack));
+	stack_b = ft_calloc(1, sizeof(t_stack));
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
-	ft_sa(&stack_a);
+	//ft_pb(&stack_a, &stack_b);
+	//ft_pb(&stack_a, &stack_b);
+	printf("===STACK A===\n");
 	ft_show_list(&stack_a);
+	printf("===STACK B===\n");
+	ft_show_list(&stack_b);
 }

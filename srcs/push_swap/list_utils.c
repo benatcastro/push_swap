@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:29:00 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 19:33:52 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ int	ft_stack_size(t_stack **head)
 		i++;
 	}
 	return (i);
+}
+
+t_stack	*ft_lastnode(t_stack **head)
+{
+	t_stack	*aux;
+
+	aux = (*head);
+	while (aux->next)
+		aux = aux->next;
+	return (aux);
 }
