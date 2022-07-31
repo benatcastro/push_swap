@@ -7,7 +7,9 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
 /*                                                                            */
+
 #include <stdio.h>
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
