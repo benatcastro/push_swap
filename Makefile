@@ -4,6 +4,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
+ARGS		= 1 2 3 4
 #---------GCC and FLAGS----------
 
 CC 	 		= gcc
@@ -42,11 +43,11 @@ sanitize: 42lib
 	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
 	@echo "Push_swap with sanitize Compiled"
 	@clear
-	@./$(NAME) 1 2 3 4 5
+	@./$(NAME) $(ARGS)
 
 run: all
 	@clear
-	@./$(NAME) 1 2 3 4 5
+	@./$(NAME) $(ARGS)
 
 valgrind:
 	@clear

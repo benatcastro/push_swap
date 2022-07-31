@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 19:58:05 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 20:36:53 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,24 @@ void	ft_create_node(t_stack **head, int n)
 void	ft_addnode(t_stack **head, t_stack *node)
 {
 	t_stack		*aux;
-	t_stack		*last;
 
-	static int	i;
 
-	if (i == 0)
+	if (!(*head))
 	{
 		(*head) = node;
-		i++;
-		return ;
+		(*head)->next = (*head);
 	}
-	aux = (*head);
-	last = ft_lastnode(head);
-	while (aux->next)
+	else
 	{
-		printf("test2");
-		aux = aux->next;
+		aux = (*head);
+		while (aux->next != (*head))
+		{
+			printf("test (%d)\n", aux->n);
+			aux = aux->next;
+		}
+		node->next = (*head);
+		aux->next = node;
+		//last->next = (*head);
 	}
-	aux->next = node;
-	node->before = aux;
-	(*head)->before = last;
-	last->next = (*head);
 }
 
