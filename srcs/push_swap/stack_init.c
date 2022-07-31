@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 16:54:34 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 16:57:18 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 static void	ft_addstack(t_stack **head, t_stack *node)
 {
 	t_stack		*aux;
-	static int	i;
 
-	if (i == 0)
+	if (!(*head))
 	{
+		printf("test\n");
 		(*head) = node;
-		i++;
-		return ;
 	}
 	aux = (*head);
 	while (aux->next)

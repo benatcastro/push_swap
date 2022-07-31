@@ -6,11 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 16:45:47 by bena             ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
-
-#include "push_swap.h"
 #include <stdio.h>
 
 int	main(int argc, char **argv)

@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:32:35 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 16:34:44 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_sa(t_stack **head_a)
 {
-	t_stack	*aux;
-
+	// int	aux;
+	(void)head_a;
+	// aux = (*head_a)->n;
+	// (*head_a)->n = (*head_a)->before->n;
+	// (*head_a)->before->n = aux;
+	// printf("aux: (%d)", (*head_a)->before->n);
 	ft_putstr_fd("sa\n", 1);
-	if (ft_stack_size(head_a) <= 1)
-		return ;
-	aux = (*head_a);
-	(*head_a) = (*head_a)->before;
-	aux->before = aux->next;
 }
