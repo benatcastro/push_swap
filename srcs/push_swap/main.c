@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/19 02:30:21 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 16:45:47 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	main(int argc, char **argv)
 	(void)stack_b;
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
-	ft_sa(&stack_a);
+	// ft_sa(&stack_a);
 	ft_show_list(&stack_a);
 }
