@@ -21,6 +21,6 @@ int	main(int argc, char **argv)
 	(void)stack_b;
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
-	// ft_sa(&stack_a);
+	ft_sa(&stack_a);
 	ft_show_list(&stack_a);
 }
