@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 17:50:27 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 17:54:16 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct t_stack
 
 void	ft_sa(t_stack **head_a);
 void	ft_sb(t_stack **head_b);
+void	ft_ss(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
 int		ft_stack_size(t_stack **head);
