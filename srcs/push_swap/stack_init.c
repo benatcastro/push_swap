@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 17:04:26 by bena             ###   ########.fr       */
+/*   Updated: 2022/07/31 17:29:50 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,21 @@ static void	ft_addstack(t_stack **head, t_stack *node)
 	t_stack		*aux;
 
 	if (!(*head))
-	{
-		printf("test\n");
 		(*head) = node;
-	}
 	else
 	{
 		aux = (*head);
 		while (aux->next)
+		{
 			aux = aux->next;
-		printf("aux: (%p) node: (%p)\n", aux, node);
-		aux = node;
+			if (aux->next == node)
+			node->before = aux;
+		}
+		aux->next = node;
+		node->before = aux;
 	}
+	// printf("aux: (%p) next: (%p) node: (%p)\n", aux, node, aux->next);
+	//printf("before: (%d) node: (%d)\n", node->before->n, node->n);
 }
 
 static void	ft_create_node(t_stack **head, int n)
