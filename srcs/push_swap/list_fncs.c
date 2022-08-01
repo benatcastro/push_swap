@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 20:36:53 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/01 02:54:57 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_addnode(t_stack **head, t_stack *node)
 {
 	t_stack		*aux;
 
-
 	if (!(*head))
 	{
 		(*head) = node;
@@ -54,12 +53,13 @@ void	ft_addnode(t_stack **head, t_stack *node)
 		aux = (*head);
 		while (aux->next != (*head))
 		{
-			printf("test (%d)\n", aux->n);
 			aux = aux->next;
+			if (aux == (*head))
+				break ;
 		}
 		node->next = (*head);
+		node->before = aux;
 		aux->next = node;
-		//last->next = (*head);
 	}
 }
 

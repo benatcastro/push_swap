@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/01 02:24:03 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/01 02:27:10 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_check_args(int count, char **args)
 	i = 0;
 	if (count <= 1)
 	{
-		ft_putstr_fd("Error, missing arguments\n", 1);
+		ft_putstr_fd("Error, missing arguments ❌\n", 1);
 		exit (EXIT_FAILURE);
 	}
 	while (args[++i])
