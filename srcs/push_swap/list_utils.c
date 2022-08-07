@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/07 03:57:03 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/07 04:23:17 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_show_list(t_stack **head)
 	{
 		printf("n:(%d) ", aux->n);
 		printf("next:(%d) ", aux->next->n);
-		printf("before:(%d) ", aux->before->n);
+		printf("before:(%d)  ", aux->before->n);
 		printf("\n");
 		aux = aux->next;
 		if (aux == (*head))
@@ -56,6 +56,8 @@ t_stack	*ft_lastnode(t_stack **head)
 		aux = aux->next;
 		if (aux == (*head))
 			break ;
+		printf("lastnode(%d)\n", aux->n);
 	}
+	printf("lastnode return (%d)\n", aux->n);
 	return (aux);
 }

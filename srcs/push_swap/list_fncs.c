@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/07 04:07:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/07 04:21:08 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,7 @@ void	ft_addnode(t_stack **head, t_stack *node)
 		}
 		node->next = (*head);
 		node->before = aux;
-		printf("lastnode test: (%d)\n", ft_lastnode(head)->n);
-		// (*head)->before = ft_lastnode(head);
+		(*head)->before = ft_lastnode(head);
 		aux->next = node;
 	}
 }
