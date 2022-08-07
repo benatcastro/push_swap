@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/01 02:54:15 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/07 03:57:03 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,15 @@ void	ft_show_list(t_stack **head)
 {
 	t_stack	*aux;
 
+	if (!(*head))
+		return ;
 	aux = (*head);
 	while (aux->next)
 	{
-		printf("(%d)\n", aux->n);
+		printf("n:(%d) ", aux->n);
+		printf("next:(%d) ", aux->next->n);
+		printf("before:(%d) ", aux->before->n);
+		printf("\n");
 		aux = aux->next;
 		if (aux == (*head))
 			break ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_fncs.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/01 02:54:57 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/07 04:07:19 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,21 @@ void	ft_free_node(t_stack **head, t_stack *ref_node)
 	t_stack	*aux;
 
 	if (ref_node == (*head))
+	{
+		printf("free first node\n");
 		(*head) = (*head)->next;
+	}
 	else
 	{
+		printf("free other node\n");
 		aux = (*head);
+
 		while (aux->next != ref_node)
-				aux = aux->next;
+		{
+			aux = aux->next;
+			if (aux == (*head))
+				break ;
+		}
 		aux->next = ref_node->next;
 	}
 	free (ref_node);
@@ -47,6 +56,7 @@ void	ft_addnode(t_stack **head, t_stack *node)
 	{
 		(*head) = node;
 		(*head)->next = (*head);
+		(*head)->before = ft_lastnode(head);
 	}
 	else
 	{
@@ -59,7 +69,8 @@ void	ft_addnode(t_stack **head, t_stack *node)
 		}
 		node->next = (*head);
 		node->before = aux;
+		printf("lastnode test: (%d)\n", ft_lastnode(head)->n);
+		// (*head)->before = ft_lastnode(head);
 		aux->next = node;
 	}
 }
-

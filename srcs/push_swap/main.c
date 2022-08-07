@@ -24,11 +24,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
-	//ft_pb(&stack_a, &stack_b);
+	printf("==INITIAL A===\n");
+	ft_show_list(&stack_a);
+	printf("==INITIAL B===\n");
+	ft_show_list(&stack_b);
+	// ft_pb(&stack_a, &stack_b);
+	// ft_pb(&stack_a, &stack_b);
+	// ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
 	//ft_pb(&stack_a, &stack_b);
 	printf("===STACK A===\n");
 	ft_show_list(&stack_a);
-	(void)stack_b;
-	//printf("===STACK B===\n");
-	//ft_show_list(&stack_b);
+	printf("===STACK B===\n");
+	ft_show_list(&stack_b);
 }
