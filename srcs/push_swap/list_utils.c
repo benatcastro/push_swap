@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/07 04:23:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:59:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,24 @@ int	ft_lst_size(t_stack **head)
 t_stack	*ft_lastnode(t_stack **head)
 {
 	t_stack	*aux;
+	t_stack	*tmp;
 
 	aux = (*head);
+	tmp = (*head);
+	while (tmp->next)
+	{
+		printf("LIST:(%d)\n", tmp->n);
+		tmp = tmp->next;
+		if (tmp == (*head))
+			break ;
+	}
 	while (aux->next)
 	{
+		printf("Node: (%d)\n", aux->n);
 		aux = aux->next;
 		if (aux == (*head))
 			break ;
-		printf("lastnode(%d)\n", aux->n);
 	}
-	printf("lastnode return (%d)\n", aux->n);
+	printf("Last Return (%d)\n", aux->n);
 	return (aux);
 }
