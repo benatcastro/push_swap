@@ -29,10 +29,13 @@ int	main(int argc, char **argv)
 	printf("==INITIAL B===\n");
 	ft_show_list(&stack_b);
 	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
+	//ft_pb(&stack_a, &stack_b);
+	//ft_pa(&stack_a, &stack_b);
+	ft_sa(&stack_a);
+	ft_sb(&stack_b);
+	//ft_pb(&stack_a, &stack_b);
+	//ft_pb(&stack_a, &stack_b);
+	//ft_pa(&stack_a, &stack_b);
 	printf("===STACK A===\n");
 	ft_show_list(&stack_a);
 	printf("===STACK B===\n");

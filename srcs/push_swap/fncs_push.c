@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/11 19:10:41 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/11 19:28:41 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,23 @@
 If the stack B is empty it does nothing*/
 void	ft_pa(t_stack **head_a, t_stack **head_b)
 {
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
 	ft_putstr_fd("pa\n", 1);
 	if (!(*head_b))
 		return ;
-	ft_create_node(head_a, (*head_b)->n);
-	ft_free_node(head_b, (*head_b));
+	tmp_a = (*head_a);
+	tmp_b = (*head_b);
+	(*head_b) = (*head_b)->next;
+	tmp_b->next = NULL;
+	if (!head_a)
+		(*head_a) = tmp_a;
+	else
+	{
+		tmp_b->next = tmp_a;
+		(*head_a) = tmp_b;
+	}
 }
 
 void	ft_pb(t_stack **head_a, t_stack **head_b)
