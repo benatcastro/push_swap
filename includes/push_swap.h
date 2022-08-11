@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/07/31 19:34:15 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/11 15:50:58 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 
 typedef struct t_stack
 {
+	int				key;
 	int				n;
 	struct t_stack	*next;
-	struct t_stack	*before;
-
 }	t_stack;
 
 //--------------SWAP FNCS-----------------//

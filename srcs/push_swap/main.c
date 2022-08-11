@@ -30,9 +30,9 @@ int	main(int argc, char **argv)
 	ft_show_list(&stack_b);
 	ft_pb(&stack_a, &stack_b);
 	ft_pb(&stack_a, &stack_b);
-	// ft_pb(&stack_a, &stack_b);
-	//ft_pb(&stack_a, &stack_b);
-	//ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
 	printf("===STACK A===\n");
 	ft_show_list(&stack_a);
 	printf("===STACK B===\n");

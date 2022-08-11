@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/08 01:09:10 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:40:19 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,13 @@ void	ft_show_list(t_stack **head)
 	if (!(*head))
 		return ;
 	aux = (*head);
-	while (aux->next)
+	while (aux)
 	{
-		printf("n:(%d) ", aux->n);
-		printf("next:(%d) ", aux->next->n);
-		printf("before:(%d)  ", aux->before->n);
+		printf("Key (%d) ", aux->key);
+		printf("n (%d) ", aux->n);
 		printf("\n");
-		// sleep(1);
+		usleep(50000);
 		aux = aux->next;
-		if (aux == (*head))
-			break ;
 	}
 }
 
