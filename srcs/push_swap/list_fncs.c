@@ -53,7 +53,15 @@ void	ft_addnode(t_stack **head, t_stack *node)
 	{
 		aux = (*head);
 		while (aux->next)
+		{
+			printf("aux key (%d) || (%d)\n", aux->key, node->key);
 			aux = aux->next;
+		}
 		aux->next = node;
+		printf("==========\n");
+		aux = (*head);
+		while (aux->next != node)
+			aux = aux->next;
+		aux->prev = aux;
 	}
 }

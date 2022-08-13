@@ -6,11 +6,23 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/11 19:41:49 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/12 20:01:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_swap_node(t_stack *node1, t_stack *node2)
+{
+
+
+	printf("Key 1 (%d) Key 2 (%d)\n", node1->key, node2->key);
+
+	t_stack	*tmp;
+
+	tmp = node1->prev;
+	tmp->next = node2;
+}
 
 void	ft_sa(t_stack **head_a)
 {
