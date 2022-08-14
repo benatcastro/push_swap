@@ -44,7 +44,6 @@ void	ft_create_node(t_stack **head, int n)
 void	ft_addnode(t_stack **head, t_stack *node)
 {
 	t_stack	*aux;
-	t_stack	*prev;
 
 	if (!(*head))
 		(*head) = node;

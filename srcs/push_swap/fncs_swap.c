@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/12 20:01:21 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:46:59 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 void	ft_swap_node(t_stack *node1, t_stack *node2)
 {
-
-
-	printf("Key 1 (%d) Key 2 (%d)\n", node1->key, node2->key);
-
 	t_stack	*tmp;
+	t_stack	*aux;
+	t_stack	*p_aux;
 
+	p_aux = node2->prev;
+	aux = node2->next;
 	tmp = node1->prev;
 	tmp->next = node2;
+	node2->next = node1;
+	node1->next = aux;
+	node2->prev = node1->prev;
+	node1->prev = p_aux;
 }
 
 void	ft_sa(t_stack **head_a)
