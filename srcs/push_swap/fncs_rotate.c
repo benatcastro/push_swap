@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/12 20:03:02 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:35:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_ra(t_stack **head_a)
 {
 	ft_putstr_fd("ra\n", 1);
 	(void)head_a;
-	//ft_swap_node((*head_a)->next->next, (*head_a)->next->next->next);
+	ft_swap_node((*head_a)->next->next, (*head_a)->next->next->next);
 }

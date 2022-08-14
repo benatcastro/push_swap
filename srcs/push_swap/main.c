@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	ft_show_list(&stack_a);
 	printf("==INITIAL B===\n");
 	ft_show_list(&stack_b);
-	ft_ra(&stack_a);
+	//ft_ra(&stack_a);
 	//ft_pb(&stack_a, &stack_b);
 	//ft_pb(&stack_a, &stack_b);
 	//ft_pa(&stack_a, &stack_b);
