@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:49:27 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 01:35:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct t_stack
 
 //--------------SWAP FNCS-----------------//
 
-void	ft_sa(t_stack **head_a);
-void	ft_sb(t_stack **head_b);
+void	ft_sa(t_stack **head_a, bool print);
+void	ft_sb(t_stack **head_b, bool print);
 void	ft_ss(t_stack **head_a, t_stack **head_b);
 void	ft_pa(t_stack **head_a, t_stack **head_b);
 void	ft_pb(t_stack **head_a, t_stack **head_b);
@@ -48,6 +48,7 @@ t_stack	*ft_lastnode(t_stack **head);
 t_stack	*ft_find_node(t_stack **head, int ref);
 t_stack	*ft_find_prev(t_stack **head, int ref);
 void	ft_arrange_links(t_stack **head_a, t_stack **head_b);
+size_t	ft_lst_size(t_stack **head);
 
 void	ft_free_node(t_stack **head, t_stack *ref_node);
 void	ft_create_node(t_stack **head, int n);

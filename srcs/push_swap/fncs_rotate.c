@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 01:04:25 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 01:44:51 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /**
  * @brief
- *shift up all elements of stack a by 1. The first element becomes
-the last one.
+ * shift up all elements of stack a by 1. The first
+ * element becomes the last one.
  * @param head_a The stack in which the fnc will be applied
  * @param print bool - print or not the fnc name
  */
@@ -26,6 +26,11 @@ void	ft_ra(t_stack **head_a, bool print)
 	t_stack	*t_prev;
 
 	tail = ft_lastnode(head_a);
+	if (ft_lst_size(head_a) <= 2)
+	{
+		ft_sa(head_a, false);
+		return ;
+	}
 	t_prev = tail;
 	aux = (*head_a)->next;
 	tail->next = (*head_a);
@@ -50,6 +55,11 @@ void	ft_rb(t_stack **head_b, bool print)
 	t_stack	*tail;
 	t_stack	*t_prev;
 
+	if (ft_lst_size(head_b) <= 2)
+	{
+		ft_sb(head_b, false);
+		return ;
+	}
 	tail = ft_lastnode(head_b);
 	t_prev = tail;
 	aux = (*head_b)->next;

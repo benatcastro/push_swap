@@ -92,7 +92,6 @@ void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 			aux_b->prev = ft_find_prev(head_b, aux_b->key - 1);
 			aux_b = aux_b->next;
 		}
-		//printf("HEADS A: (%d) B: (%d)\n", (*head_a)->key, (*head_b)->key);
 		(*head_b)->prev = NULL;
 	}
 }
