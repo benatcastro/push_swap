@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/14 20:28:54 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:23:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_ss(t_stack **head_a, t_stack **head_b);
 void	ft_pa(t_stack **head_a, t_stack **head_b);
 void	ft_pb(t_stack **head_a, t_stack **head_b);
 void	ft_ra(t_stack **head_a);
+void	ft_rb(t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/14 20:56:02 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:24:34 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,31 @@
 void	ft_ra(t_stack **head_a)
 {
 	t_stack	*aux;
+	t_stack	*tail;
+	t_stack	*t_prev;
 
-	aux = (*head_a);
-	ft_swap_node(head_a, aux, aux->next);
-	ft_swap_node(head_a, aux->next, aux->next->next);
-	// while (aux->next)
-	// {
-	// 	ft_swap_node(head_a, aux, aux->next);
-	// 	aux = aux->next;
-	// }
+	tail = ft_lastnode(head_a);
+	t_prev = tail;
+	aux = (*head_a)->next;
+	tail->next = (*head_a);
+	(*head_a)->prev = t_prev;
+	(*head_a)->next = NULL;
+	(*head_a) = aux;
 	ft_putstr_fd("ra\n", 1);
+}
 
+void	ft_rb(t_stack **head_b)
+{
+	t_stack	*aux;
+	t_stack	*tail;
+	t_stack	*t_prev;
+
+	tail = ft_lastnode(head_b);
+	t_prev = tail;
+	aux = (*head_b)->next;
+	tail->next = (*head_b);
+	(*head_b)->prev = t_prev;
+	(*head_b)->next = NULL;
+	(*head_b) = aux;
+	ft_putstr_fd("rb\n", 1);
 }

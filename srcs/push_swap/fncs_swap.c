@@ -6,51 +6,11 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/14 20:49:38 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:26:02 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_swap_head_node(t_stack **head, t_stack *node1, t_stack *node2)
-{
-	t_stack	*tmp;
-	t_stack	*aux;
-	t_stack	*p_aux;
-
-	(void)head;
-	printf("head swap\n");
-	p_aux = node2->prev;
-	aux = node2->next;
-	tmp = node1;
-	tmp->next = node2;
-	node2->next = node1;
-	node1->next = aux;
-	node2->prev = node1->prev;
-	node1->prev = p_aux;
-	(*head) = node2;
-}
-
-void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2)
-{
-	t_stack	*tmp;
-	t_stack	*aux;
-	t_stack	*p_aux;
-
-	if (node1 == (*head))
-	{
-		ft_swap_head_node(head, node1, node2);
-		return ;
-	}
-	p_aux = node2->prev;
-	aux = node2->next;
-	tmp = node1->prev;
-	tmp->next = node2;
-	node2->next = node1;
-	node1->next = aux;
-	node2->prev = node1->prev;
-	node1->prev = p_aux;
-}
 
 void	ft_sa(t_stack **head_a)
 {
