@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/12 20:02:31 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 00:05:58 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_show_list(t_stack **head)
 		else
 			printf ("prev (NULL) ");
 		printf("\n");
-		usleep(50000);
+		//usleep(50000);
 		aux = aux->next;
 	}
 }
@@ -70,6 +70,27 @@ t_stack	*ft_lastnode(t_stack **head)
 		aux = aux->next;
 		if (aux == (*head))
 			break ;
+	}
+	return (aux);
+}
+
+/**
+ * @brief
+ *
+ * @param head of the list where to find the node
+ * @param ref of the node to find
+ * @return the node, if the key is not present returns last node
+ */
+t_stack	*ft_find_node(t_stack **head, int ref)
+{
+	t_stack	*aux;
+
+	aux = (*head);
+	while (aux->next)
+	{
+		if (aux->key == ref)
+			break ;
+		aux = aux->next;
 	}
 	return (aux);
 }

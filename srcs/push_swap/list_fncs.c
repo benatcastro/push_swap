@@ -41,6 +41,12 @@ void	ft_create_node(t_stack **head, int n)
 	ft_addnode(head, node);
 }
 
+/**
+ * @brief
+ *
+ * @param head
+ * @param node
+ */
 void	ft_addnode(t_stack **head, t_stack *node)
 {
 	t_stack	*aux;
