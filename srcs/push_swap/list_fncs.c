@@ -62,3 +62,37 @@ void	ft_addnode(t_stack **head, t_stack *node)
 		node->prev = aux;
 	}
 }
+
+/**
+ * @brief shorts the pointers of next and prev after pushing a node.
+ *
+ * @param head_a head of the stack A
+ * @param head_b head of the stack B
+ */
+void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
+{
+	t_stack	*aux_a;
+	t_stack	*aux_b;
+
+	if (head_a)
+	{
+		aux_a = (*head_a);
+		while (aux_a)
+		{
+			aux_a->prev = ft_find_prev(head_a, aux_a->key - 1);
+			aux_a = aux_a->next;
+		}
+		(*head_a)->prev = NULL;
+	}
+	else if (head_b)
+	{
+		aux_b = (*head_b);
+		while (aux_b)
+		{
+			aux_b->prev = ft_find_prev(head_b, aux_b->key - 1);
+			aux_b = aux_b->next;
+		}
+		//printf("HEADS A: (%d) B: (%d)\n", (*head_a)->key, (*head_b)->key);
+		(*head_b)->prev = NULL;
+	}
+}

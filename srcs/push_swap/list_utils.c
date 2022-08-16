@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:05:58 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 00:19:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,22 @@ t_stack	*ft_find_node(t_stack **head, int ref)
 			break ;
 		aux = aux->next;
 	}
+	return (aux);
+}
+
+/**
+ * @brief
+ * iterates the list till the next node is matches the ref and key.
+ * @param head head of the stack
+ * @param ref
+ * @return the previous node of @ref param
+ */
+t_stack	*ft_find_prev(t_stack **head, int ref)
+{
+	t_stack	*aux;
+
+	aux = (*head);
+	while (aux->next && aux->next->key != ref)
+		aux = aux->next;
 	return (aux);
 }

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:12:00 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 00:19:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		ft_stack_size(t_stack **head);
 void	ft_show_list(t_stack **head);
 t_stack	*ft_lastnode(t_stack **head);
 t_stack	*ft_find_node(t_stack **head, int ref);
+t_stack	*ft_find_prev(t_stack **head, int ref);
 void	ft_arrange_links(t_stack **head_a, t_stack **head_b);
 
 void	ft_free_node(t_stack **head, t_stack *ref_node);

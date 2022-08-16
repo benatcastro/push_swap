@@ -29,10 +29,10 @@ int	main(int argc, char **argv)
 	ft_pb(&stack_a, &stack_b);
 	ft_pb(&stack_a, &stack_b);
 	ft_pb(&stack_a, &stack_b);
-	//ft_pb(&stack_a, &stack_b);
+	ft_pb(&stack_a, &stack_b);
 	ft_rra(&stack_a, true);
-	//ft_rrb(&stack_b, true);
-	// ft_rrr(&stack_a, &stack_b);
+	ft_rrb(&stack_b, true);
+	//ft_rrr(&stack_a, &stack_b);
 	//ft_rra(&stack_a, &stack_b);
 	//ft_sa(&stack_a);
 	//ft_pa(&stack_a, &stack_b);
