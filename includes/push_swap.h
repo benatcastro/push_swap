@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:19:06 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 00:49:27 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_sb(t_stack **head_b);
 void	ft_ss(t_stack **head_a, t_stack **head_b);
 void	ft_pa(t_stack **head_a, t_stack **head_b);
 void	ft_pb(t_stack **head_a, t_stack **head_b);
-void	ft_ra(t_stack **head_a);
-void	ft_rb(t_stack **head_b);
+void	ft_ra(t_stack **head_a, bool print);
+void	ft_rb(t_stack **head_b, bool print);
 void	ft_rr(t_stack **head_a, t_stack **head_b);
 void	ft_rra(t_stack **head_a, bool print);
 void	ft_rrb(t_stack **head_b, bool print);

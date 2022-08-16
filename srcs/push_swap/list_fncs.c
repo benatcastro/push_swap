@@ -64,10 +64,10 @@ void	ft_addnode(t_stack **head, t_stack *node)
 }
 
 /**
- * @brief shorts the pointers of next and prev after pushing a node.
+ * @brief shorts the pointers of next and prev on a stack.
  *
- * @param head_a head of the stack A
- * @param head_b head of the stack B
+ * @param head_a head of the stack A or NULL
+ * @param head_b head of the stack B or NULL
  */
 void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 {
@@ -84,7 +84,7 @@ void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 		}
 		(*head_a)->prev = NULL;
 	}
-	else if (head_b)
+	if (head_b)
 	{
 		aux_b = (*head_b);
 		while (aux_b)
