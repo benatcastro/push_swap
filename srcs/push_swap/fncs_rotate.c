@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/16 19:24:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/16 19:31:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,11 @@ void	ft_rb(t_stack **head_b)
 	(*head_b)->next = NULL;
 	(*head_b) = aux;
 	ft_putstr_fd("rb\n", 1);
+}
+
+void	ft_rr(t_stack **head_a, t_stack **head_b)
+{
+	ft_ra(head_a);
+	ft_rb(head_b);
+	ft_putstr_fd("rr\n", 1);
 }
