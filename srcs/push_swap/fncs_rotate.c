@@ -6,12 +6,19 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:52:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 01:04:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * @brief
+ *shift up all elements of stack a by 1. The first element becomes
+the last one.
+ * @param head_a The stack in which the fnc will be applied
+ * @param print bool - print or not the fnc name
+ */
 void	ft_ra(t_stack **head_a, bool print)
 {
 	t_stack	*aux;
@@ -30,6 +37,13 @@ void	ft_ra(t_stack **head_a, bool print)
 		ft_putstr_fd("ra\n", 1);
 }
 
+/**
+ * @brief
+ *shift up all elements of stack b by 1. The first element becomes
+the last one.
+ * @param head_b The stack in which the fnc will be applied
+ * @param print bool - print or not the fnc name
+ */
 void	ft_rb(t_stack **head_b, bool print)
 {
 	t_stack	*aux;
@@ -48,6 +62,13 @@ void	ft_rb(t_stack **head_b, bool print)
 		ft_putstr_fd("rb\n", 1);
 }
 
+/**
+ * @brief
+ * Rotate A and Rotate B at the same time
+ *
+ * @param head_a Stack A head
+ * @param head_b Stack B head
+ */
 void	ft_rr(t_stack **head_a, t_stack **head_b)
 {
 	ft_ra(head_a, false);
