@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 04:53:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 07:10:27 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	ft_rrb(t_stack **head_b, bool print);
 void	ft_rrr(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
+int		*find_min_n(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
 void	ft_swap_head_node(t_stack **head, t_stack *node1, t_stack *node2);
@@ -78,6 +79,9 @@ t_stack	*ft_find_prev(t_stack **head, int ref);
 //----------------SORTING---------------- //
 
 bool	ft_check_short(t_stack	**stack);
+//----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);
+//----------------SORT 5---------------- //
+void	ft_sort_5_logic(t_data *data);
 #endif

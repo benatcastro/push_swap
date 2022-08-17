@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:48:38 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 05:15:20 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 06:43:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	ft_sorter_manager(t_data *data)
 		ft_sort_3_logic(&data->stack_a);
 	}
 	else if (data->stack_size == 5)
+	{
 		data->sorter = SORT_5;
+		ft_sort_5_logic(data);
+	}
 	else
 		data->sorter = QUICK_SHORT;
 

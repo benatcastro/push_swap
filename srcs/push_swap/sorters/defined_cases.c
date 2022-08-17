@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 05:09:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 07:23:10 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /**
  * @brief
- * Declares the variable needed for the possible cases conditions
+ * Declares the variable needed for the possible cases conditions when sorting
+ * 3 nbrs
  * @param t_stack the stack to be sorted
  */
 void	ft_sort_3_logic(t_stack **stack)
@@ -25,11 +26,9 @@ void	ft_sort_3_logic(t_stack **stack)
 
 	if (ft_check_short(stack))
 		return ;
-	//ft_show_list(stack);
 	top = (*stack)->n;
 	mid = (*stack)->next->n;
 	bot = (*stack)->next->next->n;
-	//printf("top (%d) mid (%d) bot (%d\n", top, mid, bot);
 	ft_sort_3_cases(top, mid, bot, stack);
 }
 
@@ -60,6 +59,11 @@ void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack)
 	else if (top < mid && mid > bot && bot < top)
 		ft_rra(stack, true);
 }
-//top to middle
-//middle to bottom
-//bottom to top
+
+void	ft_sort_5_logic(t_data *data)
+{
+	int	*min_values;
+
+	min_values = find_min_n(&data->stack_a);
+
+}
