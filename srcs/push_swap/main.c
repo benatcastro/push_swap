@@ -29,28 +29,8 @@ int	main(int argc, char **argv)
 	data.stack_b = stack_b;
 	data.stack_size = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
-	printf("==INITIAL A===\n");
-	ft_show_list(&stack_a);
-	printf("===MOVEMENTS===\n");
-	// ft_pb(&stack_a, &stack_b);
-	//printf("HEADS A (%d) B (%d)\n", stack_a->key, stack_b->key);
-	//ft_ra(&stack_a, true);
-	// ft_rrb(&stack_b, true);
-	// ft_rra(&stack_a, true);
-	//ft_rra(&stack_a, true);
-	//ft_rrr(&stack_a, &stack_b);
-	//ft_sa(&stack_a);
-	//ft_pa(&stack_a, &stack_b);
-	//ft_ra(&stack_a);
-	//ft_rra(&stack_a);
-	//ft_ss(&stack_a, &stack_b);
-	//ft_rrr(&stack_a, &stack_b);
-	//ft_sa(&stack_a);
-	//ft_sb(&stack_b);
-	//ft_pb(&stack_a, &stack_b);
-	//ft_pa(&stack_a, &stack_b);
-	printf("===STACK A===\n");
-	ft_show_list(&stack_a);
-	printf("===STACK B===\n");
-	ft_show_list(&stack_b);
+	if (ft_check_short(&stack_a))
+		printf("CORRECTLY SORTED!");
+	else
+		printf("NOT SORTED!\n");
 }

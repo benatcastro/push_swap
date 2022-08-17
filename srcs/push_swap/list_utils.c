@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 01:38:04 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 04:13:56 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,15 @@ void	ft_show_list(t_stack **head)
 size_t	ft_lst_size(t_stack **head)
 {
 	t_stack	*aux;
-	size_t	i;
+	int		i;
 
 	i = 0;
 	aux = (*head);
-	while (aux->next || aux == (*head))
+	while (aux)
 	{
 		aux = aux->next;
 		i++;
 	}
-	printf("list size (%zu)\n", i);
 	return (i);
 }
 
