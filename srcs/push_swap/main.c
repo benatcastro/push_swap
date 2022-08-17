@@ -24,9 +24,6 @@ int	main(int argc, char **argv)
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
 	ft_check_duplicates(&stack_a);
-	printf("==INITIAL A===\n");
-	ft_show_list(&stack_a);
-	printf("===MOVEMENTS===\n");
 	// ft_pb(&stack_a, &stack_b);
 	//printf("HEADS A (%d) B (%d)\n", stack_a->key, stack_b->key);
 	//ft_ra(&stack_a, true);
