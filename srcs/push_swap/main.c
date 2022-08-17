@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	t_data	data;
 
 	stack_a = ft_calloc(1, sizeof(t_stack));
 	stack_b = ft_calloc(1, sizeof(t_stack));
@@ -24,6 +25,10 @@ int	main(int argc, char **argv)
 	ft_check_args(argc, argv);
 	ft_stack_init(&stack_a, &argv[1]);
 	ft_check_duplicates(&stack_a);
+	data.stack_a = stack_a;
+	data.stack_b = stack_b;
+	data.stack_size = ft_lst_size(&stack_a);
+	ft_sorter_manager(&data);
 	printf("==INITIAL A===\n");
 	ft_show_list(&stack_a);
 	printf("===MOVEMENTS===\n");
