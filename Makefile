@@ -4,7 +4,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
-ARGS		= 1 2 3 4 5 6 7 8 9 10 11 12
+ARGS		= 1 2 3 4 5 6 7 8 5123 5123 10 11 12
 #---------GCC and FLAGS----------
 
 CC 	 		= gcc

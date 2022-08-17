@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 01:35:04 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 02:17:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	ft_create_node(t_stack **head, int n);
 void	ft_addnode(t_stack **head, t_stack *node);
 
 void	ft_check_args(int count, char **args);
+void	ft_check_duplicates(t_stack **stack);
 void	ft_stack_init(t_stack **head, char **args);
 #endif

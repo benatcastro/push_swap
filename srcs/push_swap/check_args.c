@@ -3,37 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/01 02:27:10 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/17 02:30:45 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_duplicate_arg(char **args, char *c_arg)
+static void	ft_print_error(int n, int key)
 {
-	int	i;
-	int	arg;
-	int	tmp;
-	int	check;
+	ft_putstr_fd("Arg: ", 1);
+	ft_putnbr_fd(key + 1, 1);
+	ft_putstr_fd("\nNumber: (", 1);
+	ft_putnbr_fd(n, 1);
+	ft_putstr_fd(") ", 1);
+	ft_putstr_fd("is duplicated ❌", 1);
+}
 
-	check = 0;
-	arg = ft_atoi(c_arg);
-	i = -1;
-	while (args[++i])
+/**
+ * @brief
+ * Checks for duplicates numbers in the arguments
+ * @param stack head of the initialized stack A
+ */
+void	ft_check_duplicates(t_stack **stack)
+{
+	t_stack	*index;
+	t_stack	*aux;
+	int		n;
+	int		key;
+
+	index = (*stack);
+	while (index->next)
 	{
-		tmp = ft_atoi(args[i]);
-		if (arg == tmp)
-			check++;
-		else if (arg == tmp && check != 0)
+		n = index->n;
+		key = index->key;
+		aux = (*stack);
+		while (aux->next)
 		{
-			ft_putstr_fd("Error, argument number ", 1);
-			ft_putnbr_fd(i, 1);
-			ft_putstr_fd(" appears more than 1 time ❌\n", 1);
-			exit (EXIT_FAILURE);
+			if (aux->n == n && aux->key != key)
+			{
+				//TODO FREE FNC
+				ft_print_error(n, key);
+				exit(EXIT_FAILURE);
+			}
+			aux = aux->next;
 		}
+		index = index->next;
 	}
 }
 
@@ -53,7 +70,6 @@ void	ft_check_args(int count, char **args)
 		j = -1;
 		while (args[i][++j])
 		{
-			ft_duplicate_arg(args, args[i]);
 			if (!ft_isdigit(args[i][j]))
 			{
 				ft_putstr_fd("Error, argument number ", 1);
