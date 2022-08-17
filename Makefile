@@ -4,7 +4,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
-ARGS		= 1 2 3 4 5 6 7 8 5123 5123 10 11 12
+ARGS		= 1 2 3
 #---------GCC and FLAGS----------
 
 CC 	 		= gcc
@@ -19,6 +19,7 @@ OBJ_DIR = objs/
 INC_DIR = includes/
 LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
+SORTERS_DIR = $(SRC_DIR)$(NAME)/sorters/
 
 #---------------PREFIX and SUFFIX-----------------
 
@@ -36,11 +37,11 @@ mk_dirs:
 	@mkdir -p $(OBJ_DIR)
 
 push_swap: 42lib
-	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
 	@echo "Push_swap Compiled"
 
 sanitize: 42lib
-	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
 	@echo "Push_swap with sanitize Compiled"
 	@clear
 	@./$(NAME) $(ARGS)
