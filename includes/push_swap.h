@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 03:57:26 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/17 04:53:34 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ t_stack	*ft_find_prev(t_stack **head, int ref);
 //----------------SORTING---------------- //
 
 bool	ft_check_short(t_stack	**stack);
-void	ft_sort_3(t_data *data);
+void	ft_sort_3_logic(t_stack **stack);
+void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);
 #endif

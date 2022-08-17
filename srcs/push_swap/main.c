@@ -29,8 +29,8 @@ int	main(int argc, char **argv)
 	data.stack_b = stack_b;
 	data.stack_size = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
-	if (ft_check_short(&stack_a))
-		printf("CORRECTLY SORTED!");
-	else
-		printf("NOT SORTED!\n");
+	// if (ft_check_short(&stack_a))
+	// 	printf("CORRECTLY SORTED!");
+	// else
+	// 	printf("NOT SORTED!\n");
 }
