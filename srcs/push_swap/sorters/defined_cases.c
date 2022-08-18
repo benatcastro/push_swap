@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 16:43:42 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 19:12:57 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,13 @@ void	ft_sort_5_logic(t_data *data)
 	int	*min_values;
 
 	min_values = find_min_n(&data->stack_a);
-	ft_move_push(&data->stack_a, NULL, min_values[0]);
+	printf("starting list\n");
+	ft_show_list(&data->stack_a);
+	ft_moveto_head(&data->stack_a, NULL, min_values[0]);
+	ft_pb(&data->stack_a, &data->stack_b);
+	ft_moveto_head(&data->stack_a, NULL, min_values[1]);
+	ft_pb(&data->stack_a, &data->stack_b);
+	ft_show_list(&data->stack_a);
+	printf("==========\n");
+	ft_show_list(&data->stack_b);
 }

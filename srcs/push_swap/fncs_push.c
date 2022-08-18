@@ -6,15 +6,19 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 00:38:05 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 18:42:33 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-/*Takes the first element of the stack B and pushes it to the top of the stack A
-If the stack B is empty it does nothing*/
+/**
+ * @brief
+ * Takes the first element of the stack B and pushes it to the top of the stack A
+If the stack B is empty it does nothing
+ * @param head_a -> head of stack A
+ * @param head_b -> head of stack B
+ */
 void	ft_pa(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*tmp_a;
@@ -37,6 +41,13 @@ void	ft_pa(t_stack **head_a, t_stack **head_b)
 	ft_arrange_links(head_a, head_b);
 }
 
+/**
+ * @brief
+ * Takes the first element of the stack A and pushes it to the top of the stack b
+If the stack a is empty it does nothing
+ * @param head_a -> head of stack A
+ * @param head_b -> head of stack B
+ */
 void	ft_pb(t_stack **head_a, t_stack **head_b)
 {
 	t_stack	*tmp_a;
