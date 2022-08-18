@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 04:13:56 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:38:13 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@ void	ft_show_list(t_stack **head)
 {
 	t_stack	*aux;
 
-	if (!(*head))
-		return ;
-	aux = (*head);
-	while (aux)
+	if (head)
 	{
-		printf("Key (%d) ", aux->key);
-		printf("n (%d) ", aux->n);
-		if (aux->next)
-			printf("next (%d) ", aux->next->key);
-		else
-			printf ("next (NULL) ");
-		if (aux->prev)
-			printf("prev (%d) ", aux->prev->key);
-		else
-			printf ("prev (NULL) ");
-		printf("\n");
-		//usleep(50000);
-		aux = aux->next;
+		if (!(*head))
+			return ;
+		aux = (*head);
+		while (aux)
+		{
+			printf("Key (%d) ", aux->key);
+			printf("n (%d) ", aux->n);
+			if (aux->next)
+				printf("next (%d) ", aux->next->key);
+			else
+				printf ("next (NULL) ");
+			if (aux->prev)
+				printf("prev (%d) ", aux->prev->key);
+			else
+				printf ("prev (NULL) ");
+			printf("\n");
+			//usleep(50000);
+			aux = aux->next;
+		}
 	}
 }
 

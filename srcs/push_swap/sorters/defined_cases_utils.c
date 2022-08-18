@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:04:49 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 07:10:03 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:30:57 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 int	*find_min_n(t_stack **stack)
 {
 	t_stack	*aux;
-	int		min_n[2];
+	int		*min_n;
 
+	min_n = ft_calloc(2, sizeof(int));
 	aux = (*stack);
 	min_n[0] = aux->n;
 	while (aux)

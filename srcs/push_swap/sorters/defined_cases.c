@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 07:23:10 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:43:42 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ void	ft_sort_5_logic(t_data *data)
 	int	*min_values;
 
 	min_values = find_min_n(&data->stack_a);
-
+	ft_move_push(&data->stack_a, NULL, min_values[0]);
 }

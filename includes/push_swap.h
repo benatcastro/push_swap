@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 07:10:27 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/18 16:28:46 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,9 @@ typedef struct s_data
 	struct s_stack	*stack_b;
 
 }	t_data;
-
-
 //--------------PROGRAM LOGIC-----------------//
 
 void	ft_sorter_manager(t_data *data);
-
 //--------------SWAP FNCS-----------------//
 
 void	ft_sa(t_stack **head_a, bool print);
@@ -60,6 +57,7 @@ void	ft_rrb(t_stack **head_b, bool print);
 void	ft_rrr(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
+void	ft_move_push(t_stack **stack_a, t_stack **stack_b, int ref);
 int		*find_min_n(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
