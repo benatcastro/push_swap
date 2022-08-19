@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 04:28:56 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 05:59:55 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	ft_sort_5_logic(t_data *data)
 {
 	int	*min_values;
 
+	if (ft_check_short(&data->stack_a))
+		return ;
 	min_values = find_min_n(&data->stack_a);
 	ft_moveto_head(&data->stack_a, NULL, min_values[0]);
 	ft_pb(&data->stack_a, &data->stack_b);
@@ -72,4 +74,5 @@ void	ft_sort_5_logic(t_data *data)
 	ft_sort_3_logic(&data->stack_a);
 	ft_pa(&data->stack_a, &data->stack_b);
 	ft_pa(&data->stack_a, &data->stack_b);
+	free(min_values);
 }

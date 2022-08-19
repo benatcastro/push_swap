@@ -38,7 +38,6 @@ mk_dirs:
 
 push_swap: 42lib
 	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
-	export $(ARGS)
 	@echo "Push_swap Compiled"
 
 sanitize: 42lib

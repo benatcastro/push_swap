@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorter_logic.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:48:38 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/17 06:43:20 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/19 05:59:07 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ bool	ft_check_short(t_stack	**stack)
 	t_stack	*aux;
 
 	aux = (*stack);
-
 	while (aux->next)
 	{
 		if (aux->next->n < aux->n)
