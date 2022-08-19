@@ -4,7 +4,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
-ARGS		= 7 15 10 2 1
+ARGS="7 15 10 2 1"
 #---------GCC and FLAGS----------
 
 CC 	 		= gcc
@@ -38,6 +38,7 @@ mk_dirs:
 
 push_swap: 42lib
 	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	export $(ARGS)
 	@echo "Push_swap Compiled"
 
 sanitize: 42lib

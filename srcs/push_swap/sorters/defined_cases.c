@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defined_cases.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 19:28:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/19 04:28:56 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_sort_5_logic(t_data *data)
 	ft_pb(&data->stack_a, &data->stack_b);
 	ft_moveto_head(&data->stack_a, NULL, min_values[1]);
 	ft_pb(&data->stack_a, &data->stack_b);
-	ft_show_list(&data->stack_a);
 	ft_sort_3_logic(&data->stack_a);
-
+	ft_pa(&data->stack_a, &data->stack_b);
+	ft_pa(&data->stack_a, &data->stack_b);
 }

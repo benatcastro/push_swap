@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fncs_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 18:42:33 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/19 04:24:14 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_pa(t_stack **head_a, t_stack **head_b)
 		tmp_b->next = tmp_a;
 		(*head_a) = tmp_b;
 	}
-	ft_arrange_links(head_a, head_b);
+	//ft_arrange_links(head_a, head_b);
 }
 
 /**
@@ -67,5 +67,5 @@ void	ft_pb(t_stack **head_a, t_stack **head_b)
 		tmp_a->next = tmp_b;
 		(*head_b) = tmp_a;
 	}
-	ft_arrange_links(head_a, head_b);
+	// ft_arrange_links(head_a, head_b);
 }
