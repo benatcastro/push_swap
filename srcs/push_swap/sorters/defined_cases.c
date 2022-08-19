@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 05:59:55 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 06:54:12 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ void	ft_sort_5_logic(t_data *data)
 	ft_sort_3_logic(&data->stack_a);
 	ft_pa(&data->stack_a, &data->stack_b);
 	ft_pa(&data->stack_a, &data->stack_b);
+	//ft_arrange_links(&data->stack_a, NULL);
+	ft_show_double_list(&data->stack_a, &data->stack_b);
 	free(min_values);
 }

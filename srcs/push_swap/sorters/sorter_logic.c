@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:48:38 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 05:59:07 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 06:43:37 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,4 @@ void	ft_sorter_manager(t_data *data)
 	}
 	else
 		data->sorter = QUICK_SHORT;
-
 }
-
