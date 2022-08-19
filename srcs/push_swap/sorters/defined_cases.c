@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 07:03:08 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 08:12:04 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack)
 		ft_rra(stack, true);
 }
 
+/**
+ * @brief
+ * Pushes the 2 lowest nbrs of the stacks,
+ * after sorts the lasting 3 nbrs
+ * with sort_3 algorithm,
+ * then the 2 lasting nbrs are pushed in the correct position
+ * @param data -> general struct
+ */
 void	ft_sort_5_logic(t_data *data)
 {
 	int	*min_values;
@@ -70,10 +78,9 @@ void	ft_sort_5_logic(t_data *data)
 	ft_moveto_head(&data->stack_a, NULL, min_values[0]);
 	ft_pb(&data->stack_a, &data->stack_b);
 	ft_moveto_head(&data->stack_a, NULL, min_values[1]);
-	free(min_values);
 	ft_pb(&data->stack_a, &data->stack_b);
 	ft_sort_3_logic(&data->stack_a);
 	ft_pa(&data->stack_a, &data->stack_b);
 	ft_pa(&data->stack_a, &data->stack_b);
-	// ft_show_double_list(&data->stack_a, &data->stack_b);
+	free(min_values);
 }

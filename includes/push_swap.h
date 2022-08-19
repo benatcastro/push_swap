@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 06:41:06 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 08:20:57 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_rrr(t_stack **head_a, t_stack **head_b);
 
 void	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, int ref);
 int		*find_min_n(t_stack **stack);
+int		ft_get_median(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
 void	ft_swap_head_node(t_stack **head, t_stack *node1, t_stack *node2);

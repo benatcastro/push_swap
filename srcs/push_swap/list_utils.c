@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 07:08:51 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 07:21:37 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ t_stack	*ft_find_node(t_stack **head, int ref)
 	t_stack	*aux;
 
 	aux = (*head);
-	while (aux->next)
+	while (aux)
 	{
 		if (aux->key == ref)
 			break ;
@@ -110,8 +110,8 @@ t_stack	*ft_find_node(t_stack **head, int ref)
 /**
  * @brief
  * iterates the list till the next node is matches the ref and key.
- * @param head head of the stack
- * @param ref
+ * @param head -> head of the stack.
+ * @param ref -> ref value of the node to find the prev.
  * @return the previous node of @ref param
  */
 t_stack	*ft_find_prev(t_stack **head, int ref)
