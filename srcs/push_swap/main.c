@@ -11,6 +11,14 @@
 #include <stdio.h>
 #include "push_swap.h"
 
+void	check(t_data *data)
+{
+	ft_show_double_list(&data->stack_a, &data->stack_b);
+	if (ft_check_short(&data->stack_a))
+		printf("CORRECTLY SORTED!");
+	else
+		printf("NOT SORTED!\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -29,8 +37,6 @@ int	main(int argc, char **argv)
 	data.stack_b = stack_b;
 	data.stack_size = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
-	// if (ft_check_short(&stack_a))
-	// 	printf("CORRECTLY SORTED!");
-	// else
-	// 	printf("NOT SORTED!\n");
+	check(&data);
 }
+

@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 06:53:45 by bena             ###   ########.fr       */
+/*   Updated: 2022/08/19 07:08:51 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,19 @@ size_t	ft_lst_size(t_stack **head)
 	return (i);
 }
 
+/**
+ * @brief
+ * Iterates through the list and the returns the last node of it
+ * @param head -> head of the list to be iterated
+ * @return t_stack* last node of the head list
+ */
 t_stack	*ft_lastnode(t_stack **head)
 {
 	t_stack	*aux;
-	t_stack	*tmp;
 
 	aux = (*head);
-	tmp = (*head);
-	while (tmp->next)
-	{
-		tmp = tmp->next;
-		if (tmp == (*head))
-			break ;
-	}
 	while (aux->next)
-	{
 		aux = aux->next;
-		if (aux == (*head))
-			break ;
-	}
 	return (aux);
 }
 
