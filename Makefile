@@ -52,7 +52,7 @@ run: all
 
 valgrind:
 	@clear
-	@$(VALGRIND) ./$(NAME) 1 2 3 4 5
+	@$(VALGRIND) ./$(NAME) $(ARGS)
 libft: mk_dirs
 	@make -C srcs/libft
 	@clear
