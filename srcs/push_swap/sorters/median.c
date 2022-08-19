@@ -61,8 +61,10 @@ int	ft_get_median(t_stack **stack)
 	int		i;
 	int		*tab;
 	int		median;
+	int		sz;
 
-	tab = ft_calloc(ft_lst_size(stack), sizeof(int));
+	sz = ft_lst_size(stack);
+	tab = ft_calloc(sz, sizeof(int));
 	aux = (*stack);
 	i = 0;
 	ft_show_list(stack);
@@ -72,8 +74,11 @@ int	ft_get_median(t_stack **stack)
 		i++;
 		aux = aux->next;
 	}
-	sort_tab(tab, ft_lst_size(stack));
-	median = tab[i % 2];
+	sort_tab(tab, sz);
+	if (sz % 2 == 0)
+		median = ((tab[i / 2] + tab[(i + 1) / 2]) / 2);
+	else
+		median = tab[i / 2];
 	free(tab);
 	return (median);
 }
