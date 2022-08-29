@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:52:23 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 15:00:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 20:15:46 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,5 @@ int	ft_find_n_node(t_stack **stack, int ref)
 		if (aux->key == ref)
 			return (aux->n);
 	}
-	return (aux)->key;
+	return (aux->key);
 }

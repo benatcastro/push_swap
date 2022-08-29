@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 15:15:39 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:44:14 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,44 +83,6 @@ t_stack	*ft_lastnode(t_stack **head)
 
 	aux = (*head);
 	while (aux->next)
-		aux = aux->next;
-	return (aux);
-}
-
-/**
- * @brief
- *
- * @param head of the list where to find the node
- * @param ref of the node to find
- * @return the node, if the key is not present returns last node
- */
-t_stack	*ft_find_node(t_stack **head, int ref)
-{
-	t_stack	*aux;
-
-	aux = (*head);
-	while (aux)
-	{
-		if (aux->key == ref)
-			break ;
-		aux = aux->next;
-	}
-	return (aux);
-}
-
-/**
- * @brief
- * iterates the list till the next node is matches the ref and key.
- * @param head -> head of the stack.
- * @param ref -> ref value of the node to find the prev.
- * @return the previous node of @ref param
- */
-t_stack	*ft_find_prev(t_stack **head, int ref)
-{
-	t_stack	*aux;
-
-	aux = (*head);
-	while (aux->next && aux->next->key != ref)
 		aux = aux->next;
 	return (aux);
 }
