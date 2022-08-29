@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/29 14:58:48 by becastro         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/19 08:20:57 by bena             ###   ########.fr       */
+>>>>>>> 11123d44b6fe86645dfa5d5b4f49a2be579562b2
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +63,11 @@ void	ft_rrr(t_stack **head_a, t_stack **head_b);
 
 int		ft_find_n_node(t_stack **stack, int ref);
 void	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, int ref);
-int		ft_find_min_n(t_stack **stack);
+int		*find_min_n(t_stack **stack);
+int		ft_get_median(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
 void	ft_swap_head_node(t_stack **head, t_stack *node1, t_stack *node2);
-void	ft_show_list(t_stack **head);
-void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
 void	ft_arrange_links(t_stack **head_a, t_stack **head_b);
 void	ft_free_node(t_stack **head, t_stack *ref_node);
 void	ft_create_node(t_stack **head, int n);
@@ -76,6 +79,10 @@ size_t	ft_lst_size(t_stack **head);
 t_stack	*ft_lastnode(t_stack **head);
 t_stack	*ft_find_node(t_stack **head, int ref);
 t_stack	*ft_find_prev(t_stack **head, int ref);
+//show lists
+void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
+void	ft_show_list(t_stack **head);
+
 //----------------SORTING---------------- //
 
 bool	ft_check_short(t_stack	**stack);

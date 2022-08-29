@@ -74,12 +74,14 @@ void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 	t_stack	*aux_a;
 	t_stack	*aux_b;
 
+	if (ft_lst_size(head_a) <= 2 || ft_lst_size(head_b) <= 2)
+		return ;
 	if (head_a)
 	{
 		aux_a = (*head_a);
 		while (aux_a->next)
 		{
-			aux_a->prev = ft_find_prev(head_a, aux_a->key - 1);
+			aux_a->prev = ft_find_prev(head_a, aux_a->key + 1);
 			aux_a = aux_a->next;
 		}
 		(*head_a)->prev = NULL;
@@ -89,7 +91,7 @@ void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 		aux_b = (*head_b);
 		while (aux_b->next)
 		{
-			aux_b->prev = ft_find_prev(head_b, aux_b->key - 1);
+			aux_b->prev = ft_find_prev(head_b, aux_b->key + 1);
 			aux_b = aux_b->next;
 		}
 		(*head_b)->prev = NULL;

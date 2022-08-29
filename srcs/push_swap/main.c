@@ -11,12 +11,7 @@
 #include <stdio.h>
 #include "push_swap.h"
 
-/**
- * @brief
- * checks things
- * @param data
- */
-static void	check(t_data *data)
+void	check(t_data *data)
 {
 	ft_show_double_list(&data->stack_a, &data->stack_b);
 	if (ft_check_short(&data->stack_a))
@@ -43,4 +38,5 @@ int	main(int argc, char **argv)
 	data.stack_size = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
 	check(&data);
+	//check(&data);
 }
