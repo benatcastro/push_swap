@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/08/29 14:52:15 by becastro         ###   ########.fr       */
-=======
-/*   Updated: 2022/08/19 07:21:37 by bena             ###   ########.fr       */
->>>>>>> 11123d44b6fe86645dfa5d5b4f49a2be579562b2
+/*   Updated: 2022/08/29 15:15:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +14,12 @@
 
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b)
 {
-<<<<<<< HEAD
-	if (stack_a)
-	{
-		printf("====LIST A====\n");
-		ft_show_list(stack_a);
-	}
-	if (stack_b)
-	{
-		printf("====LIST B====\n");
-		ft_show_list(stack_b);
-	}
-}
-
-=======
 	printf("===STACK A===\n");
 	ft_show_list(stack_a);
 	printf("===STACK B===\n");
 	ft_show_list(stack_b);
 }
->>>>>>> 11123d44b6fe86645dfa5d5b4f49a2be579562b2
+
 void	ft_show_list(t_stack **head)
 {
 	t_stack	*aux;
@@ -104,8 +86,6 @@ t_stack	*ft_lastnode(t_stack **head)
 		aux = aux->next;
 	return (aux);
 }
-<<<<<<< HEAD
-=======
 
 /**
  * @brief
@@ -144,4 +124,3 @@ t_stack	*ft_find_prev(t_stack **head, int ref)
 		aux = aux->next;
 	return (aux);
 }
->>>>>>> 11123d44b6fe86645dfa5d5b4f49a2be579562b2

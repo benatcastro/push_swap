@@ -38,5 +38,4 @@ int	main(int argc, char **argv)
 	data.stack_size = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
 	check(&data);
-	//check(&data);
 }
