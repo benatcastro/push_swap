@@ -95,3 +95,5 @@ void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
 		(*head_b)->prev = NULL;
 	}
 }
+
+

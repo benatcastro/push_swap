@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 19:28:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:59:05 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,12 @@ void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack)
 
 void	ft_sort_5_logic(t_data *data)
 {
-	int	*min_values;
-
-	min_values = find_min_n(&data->stack_a);
-	ft_moveto_head(&data->stack_a, NULL, min_values[0]);
+	ft_moveto_head(&data->stack_a, NULL, ft_find_min_n(&data->stack_a));
 	ft_pb(&data->stack_a, &data->stack_b);
-	ft_moveto_head(&data->stack_a, NULL, min_values[1]);
+	ft_moveto_head(&data->stack_a, NULL, ft_find_min_n(&data->stack_a));
 	ft_pb(&data->stack_a, &data->stack_b);
-	ft_show_list(&data->stack_a);
 	ft_sort_3_logic(&data->stack_a);
-
+	ft_show_double_list(&data->stack_a, &data->stack_b);
+	ft_pa(&data->stack_a, &data->stack_b);
+	ft_pa(&data->stack_a, &data->stack_b);
 }

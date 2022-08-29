@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 18:35:03 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:58:48 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,14 @@ void	ft_rrb(t_stack **head_b, bool print);
 void	ft_rrr(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
+int		ft_find_n_node(t_stack **stack, int ref);
 void	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, int ref);
-int		*find_min_n(t_stack **stack);
+int		ft_find_min_n(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
 void	ft_swap_head_node(t_stack **head, t_stack *node1, t_stack *node2);
 void	ft_show_list(t_stack **head);
+void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
 void	ft_arrange_links(t_stack **head_a, t_stack **head_b);
 void	ft_free_node(t_stack **head, t_stack *ref_node);
 void	ft_create_node(t_stack **head, int n);

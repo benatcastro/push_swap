@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:04:49 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 16:30:57 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 15:00:49 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,18 @@
  * @return array of 2 integers (refs) to the nodes with 2
  * minimimun values of stack
  */
-int	*find_min_n(t_stack **stack)
+int	ft_find_min_n(t_stack **stack)
 {
 	t_stack	*aux;
-	int		*min_n;
+	int		min;
 
-	min_n = ft_calloc(2, sizeof(int));
 	aux = (*stack);
-	min_n[0] = aux->n;
+	min = (*stack)->n;
 	while (aux)
 	{
-		if (aux->n < min_n[0])
-		{
-			min_n[1] = min_n[0];
-			min_n[0] = aux->key;
-		}
+		if (aux->n < min)
+			min = aux->n;
 		aux = aux->next;
 	}
-	return (min_n);
+	return (ft_find_node(stack, min)->n);
 }

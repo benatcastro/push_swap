@@ -6,11 +6,25 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 19:01:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:52:15 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b)
+{
+	if (stack_a)
+	{
+		printf("====LIST A====\n");
+		ft_show_list(stack_a);
+	}
+	if (stack_b)
+	{
+		printf("====LIST B====\n");
+		ft_show_list(stack_b);
+	}
+}
 
 void	ft_show_list(t_stack **head)
 {
@@ -80,43 +94,5 @@ t_stack	*ft_lastnode(t_stack **head)
 		if (aux == (*head))
 			break ;
 	}
-	return (aux);
-}
-
-/**
- * @brief
- *
- * @param head of the list where to find the node
- * @param ref of the node to find
- * @return the node, if the key is not present returns last node
- */
-t_stack	*ft_find_node(t_stack **head, int ref)
-{
-	t_stack	*aux;
-
-	aux = (*head);
-	while (aux->next)
-	{
-		if (aux->key == ref)
-			break ;
-		aux = aux->next;
-	}
-	return (aux);
-}
-
-/**
- * @brief
- * iterates the list till the next node is matches the ref and key.
- * @param head head of the stack
- * @param ref
- * @return the previous node of @ref param
- */
-t_stack	*ft_find_prev(t_stack **head, int ref)
-{
-	t_stack	*aux;
-
-	aux = (*head);
-	while (aux->next && aux->next->key != ref)
-		aux = aux->next;
 	return (aux);
 }
