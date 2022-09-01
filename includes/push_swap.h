@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 18:45:41 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 12:41:29 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,20 @@ enum e_sorters
 {
 	SORT_3,
 	SORT_5,
-	QUICK_SHORT
+	GEN_SHORT
 };
 
+typedef struct s_moves
+{
+	u_int32_t	ra;
+	u_int32_t	rb;
+	u_int32_t	rr;
+	u_int32_t	rra;
+	u_int32_t	rrb;
+	u_int32_t	rrr;
+	u_int32_t	total_moves;
+
+}	t_moves;
 typedef struct s_stack
 {
 	int				key;
@@ -82,6 +93,9 @@ void	ft_show_list(t_stack **head);
 //----------------SORTING---------------- //
 
 bool	ft_check_short(t_stack	**stack);
+void	moves_a(t_data *data, t_moves *moves, size_t sz);
+void	moves_b(t_data *data, t_moves *moves, size_t sz);
+void	ft_general_short(t_data *data);
 //----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);
