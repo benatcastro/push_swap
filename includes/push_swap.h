@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 15:17:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 16:12:05 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void	ft_sorter_manager(t_data *data);
 void	ft_sa(t_stack **head_a, bool print);
 void	ft_sb(t_stack **head_b, bool print);
 void	ft_ss(t_stack **head_a, t_stack **head_b);
-void	ft_pa(t_stack **head_a, t_stack **head_b);
-void	ft_pb(t_stack **head_a, t_stack **head_b);
+void	ft_pa(t_stack **head_a, t_stack **head_b, t_data *data);
+void	ft_pb(t_stack **head_a, t_stack **head_b, t_data *data);
 void	ft_ra(t_stack **head_a, bool print);
 void	ft_rb(t_stack **head_b, bool print);
 void	ft_rr(t_stack **head_a, t_stack **head_b);
@@ -71,6 +71,7 @@ void	ft_rrb(t_stack **head_b, bool print);
 void	ft_rrr(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
+void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);
 int		ft_find_n_node(t_stack **stack, int ref);
 void	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, int ref);
@@ -97,6 +98,8 @@ void	ft_show_list(t_stack **head);
 
 bool	ft_check_short(t_stack	**stack);
 void	ft_general_short(t_data *data);
+void	ft_get_moves_a(t_data *data);
+void	ft_get_moves_b(t_data *data)
 //----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);

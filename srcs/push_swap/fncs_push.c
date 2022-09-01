@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fncs_push.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/19 06:52:33 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/01 16:11:35 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ If the stack B is empty it does nothing
  * @param head_a -> head of stack A
  * @param head_b -> head of stack B
  */
-void	ft_pa(t_stack **head_a, t_stack **head_b)
+void	ft_pa(t_stack **head_a, t_stack **head_b, t_data *data)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
@@ -38,6 +38,8 @@ void	ft_pa(t_stack **head_a, t_stack **head_b)
 		tmp_b->next = tmp_a;
 		(*head_a) = tmp_b;
 	}
+	data->sz_a++;
+	data->sz_b--;
 	ft_arrange_links(head_a, head_b);
 }
 
@@ -48,7 +50,7 @@ If the stack a is empty it does nothing
  * @param head_a -> head of stack A
  * @param head_b -> head of stack B
  */
-void	ft_pb(t_stack **head_a, t_stack **head_b)
+void	ft_pb(t_stack **head_a, t_stack **head_b, t_data *data)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
@@ -67,5 +69,7 @@ void	ft_pb(t_stack **head_a, t_stack **head_b)
 		tmp_a->next = tmp_b;
 		(*head_b) = tmp_a;
 	}
+	data->sz_a--;
+	data->sz_b++;
 	ft_arrange_links(head_a, head_b);
 }

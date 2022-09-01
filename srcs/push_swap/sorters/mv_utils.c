@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 15:19:26 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:52:35 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_get_moves_a(t_data *data)
 				aux = aux->next;
 			}
 		}
-
+		stack = stack->next;
 	}
 }
 
@@ -72,20 +72,20 @@ void	ft_get_moves_b(t_data *data)
 	{
 		aux = data->stack_b;
 		ref = ft_search_index(stack->key, data->stack_b);
-		while (stack->key != aux->key)
+		while (ref != aux->key)
 		{
-			stack->s_mv.ra++;
+			stack->s_mv.rb++;
 			aux = aux->next;
 		}
-		if (stack->s_mv.ra > (data->sz_a / 2))
+		if (stack->s_mv.ra > (data->sz_b / 2))
 		{
-			stack->s_mv.ra = 0;
+			stack->s_mv.rb = 0;
 			while (aux)
 			{
-				stack->s_mv.rra++;
+				stack->s_mv.rrb++;
 				aux = aux->next;
 			}
 		}
-
+		stack = stack->next;
 	}
 }

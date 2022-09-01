@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	ft_check_duplicates(&stack_a);
 	data.stack_a = stack_a;
 	data.stack_b = stack_b;
-	data.stack_size = ft_lst_size(&stack_a);
+	data.sz_a = ft_lst_size(&stack_a);
 	ft_sorter_manager(&data);
 	//check(&data);
 }
