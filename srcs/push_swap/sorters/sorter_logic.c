@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:48:38 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 15:14:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:01:26 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ bool	ft_check_short(t_stack	**stack)
 void	ft_sorter_manager(t_data *data)
 {
 	// printf("stack size: (%zu)\n", data->stack_size);
-	if (data->stack_size == 3)
+	if (data->sz_a == 3)
 	{
 		data->sorter = SORT_3;
 		ft_sort_3_logic(&data->stack_a);
 	}
-	else if (data->stack_size == 5)
+	else if (data->sz_a == 5)
 	{
 		data->sorter = SORT_5;
 		ft_sort_5_logic(data);
 	}
 	else
-		data->sorter = QUICK_SHORT;
+		ft_general_short(data);
 }
