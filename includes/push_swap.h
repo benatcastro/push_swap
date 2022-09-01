@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 16:12:05 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:02:55 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ enum e_sorters
 
 typedef struct s_moves
 {
-	u_int32_t		ra;
-	u_int32_t		rb;
-	u_int32_t		rr;
-	u_int32_t		rra;
-	u_int32_t		rrb;
-	u_int32_t		rrr;
-	u_int32_t		moves;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	int		moves;
 }	t_moves;
 
 typedef struct s_stack
@@ -46,8 +46,8 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				sorter;
-	size_t			sz_a;
-	size_t			sz_b;
+	int				sz_a;
+	int				sz_b;
 	struct s_moves	mv;
 	struct s_stack	*stack_a;
 	struct s_stack	*stack_b;
@@ -71,6 +71,7 @@ void	ft_rrb(t_stack **head_b, bool print);
 void	ft_rrr(t_stack **head_a, t_stack **head_b);
 //----------------LIST UTILS---------------- //
 
+void	print_data(t_data *data);
 void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);
 int		ft_find_n_node(t_stack **stack, int ref);
@@ -99,7 +100,7 @@ void	ft_show_list(t_stack **head);
 bool	ft_check_short(t_stack	**stack);
 void	ft_general_short(t_data *data);
 void	ft_get_moves_a(t_data *data);
-void	ft_get_moves_b(t_data *data)
+void	ft_get_moves_b(t_data *data);
 //----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);

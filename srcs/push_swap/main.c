@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	data.stack_a = stack_a;
 	data.stack_b = stack_b;
 	data.sz_a = ft_lst_size(&stack_a);
+	data.sz_b = ft_lst_size(&stack_b);
 	ft_sorter_manager(&data);
 	//check(&data);
 }

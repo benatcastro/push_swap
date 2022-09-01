@@ -6,11 +6,21 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 12:42:19 by vzayas-s          #+#    #+#             */
-/*   Updated: 2022/09/01 15:24:26 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:02:32 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_data(t_data *data)
+{
+	printf("=====DATA STRUCT========\n");
+	printf("%d ra,	%d rb,	%d rr	", data->mv.ra,
+		data->mv.rb, data->mv.rr);
+	printf("%d rra,	%d rrb,	%d rrr ", data->mv.rra,
+		data->mv.rrb, data->mv.rrr);
+	printf("Total moves -> %d\n", data->mv.moves);
+}
 
 static void	print_lst(t_stack *stack)
 {
@@ -29,7 +39,9 @@ static void	print_lst(t_stack *stack)
 void	print_struct(t_data *data)
 {
 	write(1, "\n--- Stack a ---\n", 18);
+	printf("Size (%d)\n", data->sz_a);
 	print_lst(data->stack_a);
 	write(1, "\n--- Stack b ---\n", 18);
+	printf("Size (%d)\n", data->sz_b);
 	print_lst(data->stack_b);
 }
