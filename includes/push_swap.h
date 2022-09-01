@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 12:41:29 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 13:40:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,5 @@ void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);
 //----------------SORT 5---------------- //
 void	ft_sort_5_logic(t_data *data);
+void	print_struct(t_data *data, t_moves *moves);
 #endif

@@ -6,11 +6,33 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:46:26 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 12:51:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 13:47:56 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	ft_key_finder(t_stack **stack, int key)
+{
+	t_stack	*aux;
+	int		i;
+	int		max;
+
+	i = 0;
+	max = 0;
+	aux = (*stack);
+	while (aux)
+	{
+		if (aux->key > i && aux->key < key)
+			i = aux->key;
+		if (aux->key > max)
+			max = aux->key;
+		aux = aux->next;
+	}
+	if (!i)
+		return (max);
+	return (i);
+}
 
 void	moves_a(t_data *data, t_moves *moves, size_t sz)
 {
@@ -45,13 +67,14 @@ void	moves_b(t_data *data, t_moves *moves, size_t sz)
 {
 	t_stack	*aux;
 	t_stack	*stack;
+	int		ref_key;
 
 	stack = data->stack_a;
 	while (stack)
 	{
-		ft_show_double_list(&data->stack_a, &data->stack_b);
 		aux = data->stack_b;
-		while (stack->key != aux->key)
+		ref_key = ft_key_finder(&data->stack_b, stack->key);
+		while (ref_key != aux->key)
 		{
 			moves->rb++;
 			aux = aux->next;
