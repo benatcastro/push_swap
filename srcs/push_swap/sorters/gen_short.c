@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 06:02:51 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/03 06:56:52 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,6 @@ static void	ft_exec_fncs(t_data *data)
 	while (data->mv.rrr--)
 		ft_rrr(&data->stack_a, &data->stack_b);
 }
-
-
-
 
 static void	ft_refill_a(t_data	*data)
 {
