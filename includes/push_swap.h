@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 05:54:07 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/03 05:56:58 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,8 @@ void	ft_general_short(t_data *data);
 void	ft_get_moves_a(t_data *data);
 void	ft_get_moves_b(t_data *data);
 void	ft_cmp_mv(t_stack *stack);
+void	ft_reset_stack(t_stack	*stack);
+void	ft_reset_data(t_data	*data);
 //----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);

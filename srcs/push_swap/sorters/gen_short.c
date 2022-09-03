@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 05:54:16 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/03 06:02:51 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,35 +66,9 @@ static void	ft_exec_fncs(t_data *data)
 }
 
 
-static void	ft_reset_stack(t_stack	*stack)
-{
-	t_stack	*aux;
-
-	aux = stack;
-	while (aux)
-	{
-		aux->s_mv.ra = 0;
-		aux->s_mv.rb = 0;
-		aux->s_mv.rr = 0;
-		aux->s_mv.rra = 0;
-		aux->s_mv.rrb = 0;
-		aux->s_mv.rrr = 0;
-		aux = aux->next;
-	}
-}
-
-static void	ft_reset_data(t_data	*data)
-{
-	data->mv.ra = 0;
-	data->mv.rb = 0;
-	data->mv.rr = 0;
-	data->mv.rra = 0;
-	data->mv.rrb = 0;
-	data->mv.rrr = 0;
-}
 
 
-void	ft_push_back(t_data	*data)
+static void	ft_refill_a(t_data	*data)
 {
 	t_stack	*aux;
 
@@ -113,7 +87,6 @@ void	ft_push_back(t_data	*data)
 			data->mv.rrb++;
 		}
 	}
-	print_data(data);
 	ft_exec_fncs(data);
 	while (data->sz_b)
 		ft_pa(&data->stack_a, &data->stack_b, data);
@@ -130,14 +103,15 @@ void	ft_general_short(t_data *data)
 	{
 		ft_get_moves_a(data);
 		ft_get_moves_b(data);
-		ft_optimize_moves(data->stack_a);
+		ft_cmp_mv(data->stack_a);
 		ft_mv_to_data(ft_get_total_moves(data), data);
 		ft_exec_fncs(data);
 		ft_reset_stack(data->stack_a);
 		ft_pb(&data->stack_a, &data->stack_b, data);
 	}
+	// ft_sb(&data->stack_b, true);
 	ft_reset_data(data);
-	print_struct(data);
-	ft_show_double_list(&data->stack_a, &data->stack_b);
-	ft_push_back(data);
+	ft_refill_a(data);
+	//print_struct(data);
+	//ft_show_double_list(&data->stack_a, &data->stack_b);
 }
