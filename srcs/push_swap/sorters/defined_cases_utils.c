@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defined_cases_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 07:04:49 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 20:28:39 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/02 07:38:58 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_find_min_nbr(t_stack **stack)
 	int		min;
 
 	aux = (*stack);
-	min = INT16_MAX;
+	min = INT_MAX;
 	while (aux)
 	{
 		if (aux->n < min)

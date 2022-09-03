@@ -9,7 +9,7 @@ ARGS	=	1000 12 64 86 95 123 654
 
 CC 	 		= gcc
 AR			= ar rc
-CFLAGS 		= -Wall -Wextra -Werror
+#CFLAGS 		= -Wall -Wextra -Werror
 SANITIZE 	= -fsanitize=address -g3
 VALGRIND 	= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 

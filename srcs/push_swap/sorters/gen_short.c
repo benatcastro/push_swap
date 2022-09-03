@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gen_short.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 17:17:12 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/03 05:21:27 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_get_total_moves(t_data *data)
 	t_stack	*aux;
 	int		min;
 
-	min = INT16_MAX;
+	min = __INT_MAX__;
 	aux = data->stack_a;
 	while (aux)
 	{
@@ -27,7 +27,7 @@ static int	ft_get_total_moves(t_data *data)
 		aux->s_mv.moves += aux->s_mv.rra;
 		aux->s_mv.moves += aux->s_mv.rrb;
 		aux->s_mv.moves += aux->s_mv.rrr;
-		if (min > (int)aux->s_mv.moves)
+		if (min > aux->s_mv.moves)
 			min = aux->s_mv.moves;
 		aux = aux->next;
 	}
@@ -38,8 +38,9 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 {
 	t_stack	*aux;
 
-	(void)min_moves;
 	aux = data->stack_a;
+	while (min_moves != aux->s_mv.moves)
+		aux = aux->next;
 	data->mv.ra = aux->s_mv.ra;
 	data->mv.rb = aux->s_mv.rb;
 	data->mv.rr = aux->s_mv.rr;
@@ -50,7 +51,6 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 
 static void	ft_exec_fncs(t_data *data)
 {
-	print_data(data);
 	//sleep(1000);
 	while (data->mv.ra--)
 		ft_ra(&data->stack_a, true);
@@ -66,21 +66,73 @@ static void	ft_exec_fncs(t_data *data)
 		ft_rrr(&data->stack_a, &data->stack_b);
 }
 
+
+static void	ft_reset_stack(t_stack	*stack)
+{
+	t_stack	*aux;
+
+	aux = stack;
+	while (aux)
+	{
+		aux->s_mv.ra = 0;
+		aux->s_mv.rb = 0;
+		aux->s_mv.rr = 0;
+		aux->s_mv.rra = 0;
+		aux->s_mv.rrb = 0;
+		aux->s_mv.rrr = 0;
+		aux = aux->next;
+	}
+}
+
+static void	ft_reset_data(t_data	*data)
+{
+	data->mv.rb = 0;
+	data->mv.rr = 0;
+	data->mv.rra = 0;
+	data->mv.rrb = 0;
+	data->mv.rrr = 0;
+}
+
+void	ft_optimize_moves(t_stack *stack)
+{
+	t_stack	*aux;
+
+	aux = stack;
+	while (aux)
+	{
+		while (aux->s_mv.ra && aux->s_mv.rb)
+		{
+			aux->s_mv.ra--;
+			aux->s_mv.rb--;
+			aux->s_mv.rr++;
+		}
+		while (aux->s_mv.rra && aux->s_mv.rrb)
+		{
+			aux->s_mv.rra--;
+			aux->s_mv.rrb--;
+			aux->s_mv.rrr++;
+		}
+		aux = aux->next;
+	}
+}
+
 void	ft_general_short(t_data *data)
 {
-	int i = 1;
 	ft_find_node(&data->stack_a, 0)->key = ft_lastnode(&data->stack_a)->key + 1;
 	ft_bzero(&data->stack_a->s_mv, sizeof(t_moves));
 	ft_bzero(&data->mv, sizeof(t_moves));
 	ft_pb(&data->stack_a, &data->stack_b, data);
 	ft_pb(&data->stack_a, &data->stack_b, data);
-	while (i--)
+	while (data->sz_a)
 	{
 		ft_get_moves_a(data);
 		ft_get_moves_b(data);
+		ft_optimize_moves(data->stack_a);
 		ft_mv_to_data(ft_get_total_moves(data), data);
-		//print_struct(data);
 		ft_exec_fncs(data);
+		ft_reset_stack(data->stack_a);
+		ft_pb(&data->stack_a, &data->stack_b, data);
 	}
-	print_struct(data);
+	ft_reset_data(data);
+	//print_struct(data);
 }
