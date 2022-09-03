@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fncs_rev_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/18 18:52:53 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/03 05:52:22 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_rrb(t_stack **head_b, bool print)
 	}
 	tail = ft_lastnode(head_b);
 	tail->next = (*head_b);
-	tail->prev->next = NULL;
+	//tail->prev->next = NULL;
 	(*head_b) = tail;
 	tail->prev = (*head_b);
 	ft_arrange_links(NULL, head_b);

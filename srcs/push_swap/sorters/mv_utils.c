@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mv_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 16:19:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/03 05:54:23 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,28 @@ void	ft_get_moves_b(t_data *data)
 			}
 		}
 		stack = stack->next;
+	}
+}
+
+void	ft_cmp_mv(t_stack *stack)
+{
+	t_stack	*aux;
+
+	aux = stack;
+	while (aux)
+	{
+		while (aux->s_mv.ra && aux->s_mv.rb)
+		{
+			aux->s_mv.ra--;
+			aux->s_mv.rb--;
+			aux->s_mv.rr++;
+		}
+		while (aux->s_mv.rra && aux->s_mv.rrb)
+		{
+			aux->s_mv.rra--;
+			aux->s_mv.rrb--;
+			aux->s_mv.rrr++;
+		}
+		aux = aux->next;
 	}
 }

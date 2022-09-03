@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 17:02:55 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/03 05:54:07 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ bool	ft_check_short(t_stack	**stack);
 void	ft_general_short(t_data *data);
 void	ft_get_moves_a(t_data *data);
 void	ft_get_moves_b(t_data *data);
+void	ft_cmp_mv(t_stack *stack);
 //----------------SORT 3---------------- //
 void	ft_sort_3_logic(t_stack **stack);
 void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);

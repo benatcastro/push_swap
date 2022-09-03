@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 05:45:20 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/03 05:54:16 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,28 +93,6 @@ static void	ft_reset_data(t_data	*data)
 	data->mv.rrr = 0;
 }
 
-void	ft_optimize_moves(t_stack *stack)
-{
-	t_stack	*aux;
-
-	aux = stack;
-	while (aux)
-	{
-		while (aux->s_mv.ra && aux->s_mv.rb)
-		{
-			aux->s_mv.ra--;
-			aux->s_mv.rb--;
-			aux->s_mv.rr++;
-		}
-		while (aux->s_mv.rra && aux->s_mv.rrb)
-		{
-			aux->s_mv.rra--;
-			aux->s_mv.rrb--;
-			aux->s_mv.rrr++;
-		}
-		aux = aux->next;
-	}
-}
 
 void	ft_push_back(t_data	*data)
 {
