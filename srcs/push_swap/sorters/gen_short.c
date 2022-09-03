@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 05:21:27 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/03 05:45:20 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 
 static void	ft_exec_fncs(t_data *data)
 {
-	//sleep(1000);
 	while (data->mv.ra--)
 		ft_ra(&data->stack_a, true);
 	while (data->mv.rb--)
@@ -86,6 +85,7 @@ static void	ft_reset_stack(t_stack	*stack)
 
 static void	ft_reset_data(t_data	*data)
 {
+	data->mv.ra = 0;
 	data->mv.rb = 0;
 	data->mv.rr = 0;
 	data->mv.rra = 0;
@@ -116,6 +116,31 @@ void	ft_optimize_moves(t_stack *stack)
 	}
 }
 
+void	ft_push_back(t_data	*data)
+{
+	t_stack	*aux;
+
+	aux = data->stack_b;
+	while (aux->key != data->sz_b)
+	{
+		aux = aux->next;
+		data->mv.rb++;
+	}
+	if (data->mv.rb > (data->sz_b / 2))
+	{
+		data->mv.rb = 0;
+		while (aux)
+		{
+			aux = aux->next;
+			data->mv.rrb++;
+		}
+	}
+	print_data(data);
+	ft_exec_fncs(data);
+	while (data->sz_b)
+		ft_pa(&data->stack_a, &data->stack_b, data);
+}
+
 void	ft_general_short(t_data *data)
 {
 	ft_find_node(&data->stack_a, 0)->key = ft_lastnode(&data->stack_a)->key + 1;
@@ -134,5 +159,7 @@ void	ft_general_short(t_data *data)
 		ft_pb(&data->stack_a, &data->stack_b, data);
 	}
 	ft_reset_data(data);
-	//print_struct(data);
+	print_struct(data);
+	ft_show_double_list(&data->stack_a, &data->stack_b);
+	ft_push_back(data);
 }
