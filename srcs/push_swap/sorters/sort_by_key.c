@@ -67,7 +67,7 @@ static void	ft_set_keys(int *tab, t_data *data)
 	}
 }
 
-void	ft_set_min_keys(t_data *data)
+void	ft_short_keys(t_data *data)
 {
 	t_stack	*aux;
 	int		i;

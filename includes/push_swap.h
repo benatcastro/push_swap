@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 15:30:02 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/05 17:05:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,7 @@ void	ft_show_list(t_stack **head);
 
 //----------------SORTING---------------- //
 
-void	ft_set_min_keys(t_data *data);
-void	ft_reset_keys(t_data *data);
+void	ft_short_keys(t_data *data);
 bool	ft_check_short(t_stack	**stack);
 void	ft_general_short(t_data *data);
 void	ft_get_moves_a(t_data *data);
