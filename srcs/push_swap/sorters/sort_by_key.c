@@ -10,7 +10,6 @@
 
 #include "push_swap.h"
 
-
 /**
  * @brief
  * checks if an array of integers is sorted
@@ -24,7 +23,6 @@ static bool	is_sorted(int *tab, int sz)
 	int	i;
 
 	i = -1;
-
 	while (tab[++i] && i < sz && i + 1 < sz)
 		if (tab[i] > tab[i + 1])
 			return (false);
@@ -55,30 +53,42 @@ static void	sort_tab(int *tab, int sz)
 		sort_tab(tab, sz);
 }
 
-int	ft_get_median(t_stack **stack)
+static void	ft_set_keys(int *tab, t_data *data)
+{
+	int	key;
+	int	i;
+
+	key = 1;
+	i = -1;
+	while (++i < data->sz_a)
+	{
+		ft_find_nbr_node(&data->stack_a, tab[i])->key = key;
+		key++;
+	}
+}
+
+void	ft_set_min_keys(t_data *data)
 {
 	t_stack	*aux;
 	int		i;
+	int		j;
 	int		*tab;
-	int		median;
-	int		sz;
 
-	sz = ft_lst_size(stack);
-	tab = ft_calloc(sz, sizeof(int));
-	aux = (*stack);
+	tab = ft_calloc(data->sz_a, sizeof(int));
+	aux = data->stack_a;
 	i = 0;
-	ft_show_list(stack);
 	while (aux)
 	{
 		tab[i] = aux->n;
 		i++;
 		aux = aux->next;
 	}
-	sort_tab(tab, sz);
-	if (sz % 2 == 0)
-		median = ((tab[i / 2] + tab[(i + 1) / 2]) / 2);
-	else
-		median = tab[i / 2];
-	free(tab);
-	return (median);
+	sort_tab(tab, data->sz_a);
+	ft_set_keys(tab, data);
+	j = 0;
+	while (j < data->sz_a)
+	{
+		printf("tab (%d)\n", tab[j]);
+		j++;
+	}
 }

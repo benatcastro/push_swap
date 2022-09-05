@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 14:42:15 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:35:10 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ static void	ft_refill_a(t_data	*data)
 
 void	ft_general_short(t_data *data)
 {
-	//ft_find_node(&data->stack_a, 0)->key = ft_lastnode(&data->stack_a)->key + 1;
-	ft_reset_keys(data);
+	print_struct(data);
+	ft_set_min_keys(data);
 	print_struct(data);
 	ft_pb(&data->stack_a, &data->stack_b, data);
 	ft_pb(&data->stack_a, &data->stack_b, data);

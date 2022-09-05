@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:52:23 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/29 20:15:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:29:35 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,26 @@ int	ft_find_n_node(t_stack **stack, int ref)
 			return (aux->n);
 	}
 	return (aux->key);
+}
+
+/**
+ * @brief
+ * returns the stack that matches the stack->n value with nbr
+ * if there are no matches returns the last node of the list
+ * @param stack
+ * @param nbr
+ * @return t_stack*
+ */
+t_stack	*ft_find_nbr_node(t_stack **stack, int nbr)
+{
+	t_stack	*aux;
+
+	aux = (*stack);
+	while (aux)
+	{
+		if (aux->n == nbr)
+			return (aux);
+		aux = aux->next;
+	}
+	return (aux);
 }
