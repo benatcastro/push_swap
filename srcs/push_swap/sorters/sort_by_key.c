@@ -71,7 +71,6 @@ void	ft_short_keys(t_data *data)
 {
 	t_stack	*aux;
 	int		i;
-	int		j;
 	int		*tab;
 
 	tab = ft_calloc(data->sz_a, sizeof(int));
@@ -85,10 +84,4 @@ void	ft_short_keys(t_data *data)
 	}
 	sort_tab(tab, data->sz_a);
 	ft_set_keys(tab, data);
-	j = 0;
-	while (j < data->sz_a)
-	{
-		printf("tab (%d)\n", tab[j]);
-		j++;
-	}
 }
