@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fncs_rev_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/03 05:52:22 by bena             ###   ########.fr       */
+/*   Updated: 2022/09/05 19:42:53 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_rra(t_stack **head_a, bool print)
 	tail->prev->next = NULL;
 	(*head_a)->prev = tail;
 	(*head_a) = tail;
-	ft_arrange_links(head_a, NULL);
+	//ft_arrange_links(head_a, NULL);
 	if (print)
 		ft_putstr_fd("rra\n", 1);
 }

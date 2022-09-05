@@ -73,7 +73,7 @@ void	ft_short_keys(t_data *data)
 	int		i;
 	int		*tab;
 
-	tab = ft_calloc(data->sz_a, sizeof(int));
+	tab = ft_calloc(data->sz_a, sizeof(int) + 1);
 	aux = data->stack_a;
 	i = 0;
 	while (aux)

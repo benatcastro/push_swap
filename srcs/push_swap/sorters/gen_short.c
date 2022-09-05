@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 17:07:29 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/05 19:21:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ static void	ft_refill_a(t_data	*data)
 
 void	ft_general_short(t_data *data)
 {
-	print_struct(data);
 	ft_short_keys(data);
 	print_struct(data);
 	ft_pb(&data->stack_a, &data->stack_b, data);
@@ -105,11 +104,10 @@ void	ft_general_short(t_data *data)
 		ft_exec_fncs(data);
 		ft_reset_stack(data->stack_a);
 		ft_pb(&data->stack_a, &data->stack_b, data);
-		printf("TEST\n");
 	}
-	// ft_sb(&data->stack_b, true);
 	ft_reset_data(data);
 	ft_refill_a(data);
+	print_struct(data);
 	//print_struct(data);
 	//ft_show_double_list(&data->stack_a, &data->stack_b);
 }

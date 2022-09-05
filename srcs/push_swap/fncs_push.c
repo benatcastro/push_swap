@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 16:11:35 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/05 19:04:27 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_pa(t_stack **head_a, t_stack **head_b, t_data *data)
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
 
-	ft_putstr_fd("pa\n", 1);
 	if (!(*head_b))
 		return ;
 	tmp_a = (*head_a);
@@ -40,7 +39,8 @@ void	ft_pa(t_stack **head_a, t_stack **head_b, t_data *data)
 	}
 	data->sz_a++;
 	data->sz_b--;
-	ft_arrange_links(head_a, head_b);
+	//ft_arrange_links(head_a, head_b);
+	ft_putstr_fd("pa\n", 1);
 }
 
 /**
@@ -55,7 +55,6 @@ void	ft_pb(t_stack **head_a, t_stack **head_b, t_data *data)
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
 
-	ft_putstr_fd("pb\n", 1);
 	if (!(*head_a))
 		return ;
 	tmp_a = (*head_a);
@@ -71,5 +70,6 @@ void	ft_pb(t_stack **head_a, t_stack **head_b, t_data *data)
 	}
 	data->sz_a--;
 	data->sz_b++;
-	ft_arrange_links(head_a, head_b);
+	//ft_arrange_links(head_a, head_b);
+	ft_putstr_fd("pb\n", 1);
 }
