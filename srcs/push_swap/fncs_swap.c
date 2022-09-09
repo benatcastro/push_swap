@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 19:13:40 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 05:17:44 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_sa(t_stack **head_a, bool print)
 	(*head_a) = (*head_a)->next;
 	tmp->next = (*head_a)->next;
 	(*head_a)->next = tmp;
-	//ft_arrange_links(head_a, NULL);
 	if (print)
 		ft_putstr_fd("sa\n", 1);
 }
@@ -50,7 +49,6 @@ void	ft_sb(t_stack **head_b, bool print)
 	(*head_b) = (*head_b)->next;
 	tmp->next = (*head_b)->next;
 	(*head_b)->next = tmp;
-	//ft_arrange_links(NULL, head_b);
 	if (print)
 		ft_putstr_fd("sb\n", 1);
 }

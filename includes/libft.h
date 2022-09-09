@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:04:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 05:13:42 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "push_swap.h"
+
 typedef struct s_list
 {
 	void			*content;
@@ -39,7 +40,6 @@ typedef struct s_stack
 	int				n;
 	struct s_moves	s_mv;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 int		ft_atoi(const char *nptr);

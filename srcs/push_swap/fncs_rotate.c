@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 19:13:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 05:13:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_ra(t_stack **head_a, bool print)
 {
 	t_stack	*aux;
 	t_stack	*tail;
-	t_stack	*t_prev;
 
 	tail = ft_lastnode(head_a);
 	if (ft_lst_size(head_a) <= 2)
@@ -31,13 +30,10 @@ void	ft_ra(t_stack **head_a, bool print)
 		ft_sa(head_a, false);
 		return ;
 	}
-	t_prev = tail;
 	aux = (*head_a)->next;
 	tail->next = (*head_a);
-	(*head_a)->prev = t_prev;
 	(*head_a)->next = NULL;
 	(*head_a) = aux;
-	//ft_arrange_links(head_a, NULL);
 	if (print)
 		ft_putstr_fd("ra\n", 1);
 }
@@ -53,7 +49,6 @@ void	ft_rb(t_stack **head_b, bool print)
 {
 	t_stack	*aux;
 	t_stack	*tail;
-	t_stack	*t_prev;
 
 	if (ft_lst_size(head_b) <= 2)
 	{
@@ -61,13 +56,10 @@ void	ft_rb(t_stack **head_b, bool print)
 		return ;
 	}
 	tail = ft_lastnode(head_b);
-	t_prev = tail;
 	aux = (*head_b)->next;
 	tail->next = (*head_b);
-	(*head_b)->prev = t_prev;
 	(*head_b)->next = NULL;
 	(*head_b) = aux;
-	//ft_arrange_links(NULL, head_b);
 	if (print)
 		ft_putstr_fd("rb\n", 1);
 }

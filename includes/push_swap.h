@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:15:31 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 05:16:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ enum e_sorters
 	SORT_5,
 	GEN_SHORT,
 };
-
 
 typedef struct s_data
 {

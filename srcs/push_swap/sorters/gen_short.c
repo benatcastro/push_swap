@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:18:14 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 05:19:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,4 @@ void	ft_general_short(t_data *data)
 	ft_reset_data(data);
 	ft_refill_a(data);
 	print_struct(data);
-	//print_struct(data);
-	//ft_show_double_list(&data->stack_a, &data->stack_b);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/08/07 20:38:08ecastro         ###   ########.fr       */
+/*   Created: 2022/09/09 05:17:21 by becastro          #+#    #+#             */
+/*   Updated: 2022/09/09 05:17:26 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,43 +59,5 @@ void	ft_addnode(t_stack **head, t_stack *node)
 		while (aux->next)
 			aux = aux->next;
 		aux->next = node;
-		node->prev = aux;
 	}
 }
-
-/**
- * @brief shorts the pointers of next and prev on a stack.
- *
- * @param head_a head of the stack A or NULL
- * @param head_b head of the stack B or NULL
- */
-void	ft_arrange_links(t_stack **head_a, t_stack **head_b)
-{
-	t_stack	*aux_a;
-	t_stack	*aux_b;
-
-	if (ft_lst_size(head_a) <= 2 || ft_lst_size(head_b) <= 2)
-		return ;
-	if (head_a)
-	{
-		aux_a = (*head_a);
-		while (aux_a->next)
-		{
-			aux_a->prev = ft_find_prev(head_a, aux_a->key + 1);
-			aux_a = aux_a->next;
-		}
-		(*head_a)->prev = NULL;
-	}
-	if (head_b)
-	{
-		aux_b = (*head_b);
-		while (aux_b->next)
-		{
-			aux_b->prev = ft_find_prev(head_b, aux_b->key + 1);
-			aux_b = aux_b->next;
-		}
-		(*head_b)->prev = NULL;
-	}
-}
-
-

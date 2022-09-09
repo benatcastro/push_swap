@@ -3,10 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
+/*   Created: 2022/09/09 05:17:51 by becastro          #+#    #+#             */
+/*   Updated: 2022/09/09 05:18:58 by becastro         ###   ########.fr       */
 /*                                                                            */
+/* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
@@ -38,5 +40,4 @@ int	main(int argc, char **argv)
 	data.sz_a = ft_lst_size(&stack_a);
 	data.sz_b = ft_lst_size(&stack_b);
 	ft_sorter_manager(&data);
-	//check(&data);
 }
