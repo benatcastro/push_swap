@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:04:54 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:15:31 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	ft_pb(t_data *data);
 void	ft_ra(t_stack **head_a, bool print);
 void	ft_rb(t_stack **head_b, bool print);
 void	ft_rr(t_stack **head_a, t_stack **head_b);
-void	ft_rra(t_stack **head_a, bool print);
-void	ft_rrb(t_stack **head_b, bool print);
-void	ft_rrr(t_stack **head_a, t_stack **head_b);
+void	ft_rra(t_data *data, bool print);
+void	ft_rrb(t_data *data, bool print);
+void	ft_rrr(t_data *data);
 //----------------LIST UTILS---------------- //
 
 void	print_data(t_data *data);
@@ -59,7 +59,8 @@ void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);
 t_stack	*ft_find_nbr_node(t_stack **stack, int nbr);
 int		ft_find_n_node(t_stack **stack, int ref);
-void	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, int ref);
+void	ft_moveto_head(t_stack **stack_a,
+			t_stack **stack_b, t_data *data, int ref);
 int		ft_get_median(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
@@ -90,8 +91,8 @@ void	ft_cmp_mv(t_stack *stack);
 void	ft_reset_stack(t_stack	*stack);
 void	ft_reset_data(t_data	*data);
 //----------------SORT 3---------------- //
-void	ft_sort_3_logic(t_stack **stack);
-void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack);
+void	ft_sort_3_logic(t_data *data);
+void	ft_sort_3_cases(int top, int mid, int bot, t_data *data);
 //----------------SORT 5---------------- //
 void	ft_sort_5_logic(t_data *data);
 #endif

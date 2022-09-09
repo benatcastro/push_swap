@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 02:53:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:06:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,16 @@ static int	ft_search_index(int ref, t_stack **stack)
 	i = 0;
 	max = 0;
 	aux = (*stack);
-	ft_show_list(stack);
 	while (aux)
 	{
-		//printf("ITERATE (%d)\n", aux->key);
 		if (aux->key > i && aux->key < ref)
 			i = aux->key;
 		if (aux->key > max)
 			max = aux->key;
-		if (aux == (*stack))
-			break ;
 		aux = aux->next;
 	}
 	if (!i)
-	{
-		//printf("FIND INDEX RETURN (%d)\n", max);
 		return (max);
-	}
-	//printf("FIND INDEX RETURN (%d)\n", i);
 	return (i);
 }
 
@@ -80,7 +72,6 @@ void	ft_get_moves_b(t_data *data)
 	{
 		aux = data->stack_b;
 		ref = ft_search_index(stack->key, &data->stack_b);
-		//printf("ref(%d)\n", ref);
 		while (ref != aux->key)
 		{
 			stack->s_mv.rb++;

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:01:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:19:17 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@
  * 3 nbrs
  * @param t_stack the stack to be sorted
  */
-void	ft_sort_3_logic(t_stack **stack)
+void	ft_sort_3_logic(t_data *data)
 {
-	int	top;
-	int	mid;
-	int	bot;
+	int		top;
+	int		mid;
+	int		bot;
+	t_stack	**stack;
 
+	stack = &data->stack_a;
 	if (ft_check_short(stack))
 		return ;
 	top = (*stack)->n;
 	mid = (*stack)->next->n;
 	bot = (*stack)->next->next->n;
-	ft_sort_3_cases(top, mid, bot, stack);
+	ft_sort_3_cases(top, mid, bot, data);
 }
 
 /**
@@ -40,24 +42,24 @@ void	ft_sort_3_logic(t_stack **stack)
  * @param bot --> botton nbr at the stack
  * @param stack stack to be sorted
  */
-void	ft_sort_3_cases(int top, int mid, int bot, t_stack **stack)
+void	ft_sort_3_cases(int top, int mid, int bot, t_data *data)
 {
 	if (top > mid && mid < bot && bot > top)
-		ft_sa(stack, true);
+		ft_sa(&data->stack_a, true);
 	else if (top > mid && mid > bot && top > bot)
 	{
-		ft_sa(stack, true);
-		ft_rra(stack, true);
+		ft_sa(&data->stack_a, true);
+		ft_rra(data, true);
 	}
 	else if (top > mid && mid < bot && top > bot)
-		ft_ra(stack, true);
+		ft_ra(&data->stack_a, true);
 	else if ((top < mid) && (mid > bot) && (bot > top))
 	{
-		ft_sa(stack, true);
-		ft_ra(stack, true);
+		ft_sa(&data->stack_a, true);
+		ft_ra(&data->stack_a, true);
 	}
 	else if (top < mid && mid > bot && bot < top)
-		ft_rra(stack, true);
+		ft_rra(data, true);
 }
 
 /**
@@ -72,11 +74,11 @@ void	ft_sort_5_logic(t_data *data)
 {
 	if (ft_check_short(&data->stack_a))
 		return ;
-	ft_moveto_head(&data->stack_a, NULL, ft_find_min_nbr(&data->stack_a));
+	ft_moveto_head(&data->stack_a, NULL, data, ft_find_min_nbr(&data->stack_a));
 	ft_pb(data);
-	ft_moveto_head(&data->stack_a, NULL, ft_find_min_nbr(&data->stack_a));
+	ft_moveto_head(&data->stack_a, NULL, data, ft_find_min_nbr(&data->stack_a));
 	ft_pb(data);
-	ft_sort_3_logic(&data->stack_a);
+	ft_sort_3_logic(data);
 	ft_pa(data);
 	ft_pa(data);
 }

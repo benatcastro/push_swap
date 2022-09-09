@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:05:05 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:18:14 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static void	ft_exec_fncs(t_data *data)
 	while (data->mv.rr--)
 		ft_rr(&data->stack_a, &data->stack_b);
 	while (data->mv.rra--)
-		ft_rra(&data->stack_a, true);
+		ft_rra(data, true);
 	while (data->mv.rrb--)
-		ft_rrb(&data->stack_b, true);
+		ft_rrb(data, true);
 	while (data->mv.rrr--)
-		ft_rrr(&data->stack_a, &data->stack_b);
+		ft_rrr(data);
 }
 
 static void	ft_refill_a(t_data	*data)

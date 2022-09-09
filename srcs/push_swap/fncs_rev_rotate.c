@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 19:42:53 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:11:36 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,18 @@
  * @param head_a head of Stack A
  * @param print bool - print or not the fnc name
  */
-void	ft_rra(t_stack **head_a, bool print)
+void	ft_rra(t_data *data, bool print)
 {
-	t_stack	*tail;
+	t_stack	**stack;
+	t_stack	*aux;
 
-	if (ft_lst_size(head_a) <= 2)
-	{
-		ft_sa(head_a, false);
-		return ;
-	}
-	tail = ft_lastnode(head_a);
-	tail->next = (*head_a);
-	tail->prev->next = NULL;
-	(*head_a)->prev = tail;
-	(*head_a) = tail;
-	//ft_arrange_links(head_a, NULL);
+	stack = &data->stack_a;
+	aux = *stack;
+	while (aux->next->next != NULL)
+		aux = aux->next;
+	aux->next->next = *stack;
+	*stack = aux->next;
+	aux->next = NULL;
 	if (print)
 		ft_putstr_fd("rra\n", 1);
 }
@@ -44,21 +41,18 @@ void	ft_rra(t_stack **head_a, bool print)
  * @param head_a head of Stack B
  * @param print bool - print or not the fnc name
  */
-void	ft_rrb(t_stack **head_b, bool print)
+void	ft_rrb(t_data *data, bool print)
 {
-	t_stack	*tail;
+	t_stack	**stack;
+	t_stack	*aux;
 
-	if (ft_lst_size(head_b) <= 2)
-	{
-		ft_sb(head_b, false);
-		return ;
-	}
-	tail = ft_lastnode(head_b);
-	tail->next = (*head_b);
-	//tail->prev->next = NULL;
-	(*head_b) = tail;
-	tail->prev = (*head_b);
-	ft_arrange_links(NULL, head_b);
+	stack = &data->stack_b;
+	aux = *stack;
+	while (aux->next->next != NULL)
+		aux = aux->next;
+	aux->next->next = *stack;
+	*stack = aux->next;
+	aux->next = NULL;
 	if (print)
 		ft_putstr_fd("rrb\n", 1);
 }
@@ -69,9 +63,9 @@ void	ft_rrb(t_stack **head_b, bool print)
  * @param head_a head of stack A
  * @param head_b head of stack B
  */
-void	ft_rrr(t_stack **head_a, t_stack **head_b)
+void	ft_rrr(t_data *data)
 {
-	ft_rra(head_a, false);
-	ft_rrb(head_b, false);
+	ft_rra(data, false);
+	ft_rrb(data, false);
 	ft_putstr_fd("rra\n", 1);
 }
