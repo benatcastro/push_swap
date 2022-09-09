@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/04/27 14:57:36 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:04:34 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,32 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
+# include "push_swap.h"
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct s_moves
+{
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	int		moves;
+}	t_moves;
+
+typedef struct s_stack
+{
+	int				key;
+	int				n;
+	struct s_moves	s_mv;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
 int		ft_atoi(const char *nptr);
 int		ft_isalpha(int argument);
@@ -57,7 +77,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);

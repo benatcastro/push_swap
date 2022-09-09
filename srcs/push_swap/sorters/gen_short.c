@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 02:54:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:05:05 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,15 @@ static void	ft_refill_a(t_data	*data)
 	}
 	ft_exec_fncs(data);
 	while (data->sz_b)
-		ft_pa(&data->stack_a, &data->stack_b, data);
+		ft_pa(data);
 }
 
 void	ft_general_short(t_data *data)
 {
 	ft_short_keys(data);
 	print_struct(data);
-	ft_pb(&data->stack_a, &data->stack_b, data);
-	ft_pb(&data->stack_a, &data->stack_b, data);
+	ft_pb(data);
+	ft_pb(data);
 	while (data->sz_a)
 	{
 		ft_get_moves_a(data);
@@ -103,7 +103,7 @@ void	ft_general_short(t_data *data)
 		ft_mv_to_data(ft_get_total_moves(data), data);
 		ft_exec_fncs(data);
 		ft_reset_stack(data->stack_a);
-		ft_pb(&data->stack_a, &data->stack_b, data);
+		ft_pb(data);
 	}
 	ft_reset_data(data);
 	ft_refill_a(data);

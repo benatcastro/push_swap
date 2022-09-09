@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 17:05:38 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 04:04:54 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,13 @@ enum e_sorters
 	GEN_SHORT,
 };
 
-typedef struct s_moves
-{
-	int		ra;
-	int		rb;
-	int		rr;
-	int		rra;
-	int		rrb;
-	int		rrr;
-	int		moves;
-}	t_moves;
 
-typedef struct s_stack
-{
-	int				key;
-	int				n;
-	struct s_moves	s_mv;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
 typedef struct s_data
 {
 	int				sorter;
 	int				sz_a;
 	int				sz_b;
+	size_t			total_moves;
 	struct s_moves	mv;
 	struct s_stack	*stack_a;
 	struct s_stack	*stack_b;
@@ -61,8 +44,8 @@ void	ft_sorter_manager(t_data *data);
 void	ft_sa(t_stack **head_a, bool print);
 void	ft_sb(t_stack **head_b, bool print);
 void	ft_ss(t_stack **head_a, t_stack **head_b);
-void	ft_pa(t_stack **head_a, t_stack **head_b, t_data *data);
-void	ft_pb(t_stack **head_a, t_stack **head_b, t_data *data);
+void	ft_pa( t_data *data);
+void	ft_pb(t_data *data);
 void	ft_ra(t_stack **head_a, bool print);
 void	ft_rb(t_stack **head_b, bool print);
 void	ft_rr(t_stack **head_a, t_stack **head_b);
