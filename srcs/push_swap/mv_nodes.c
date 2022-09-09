@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:01:14 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:19:44 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/09 06:55:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void
 	{
 		if ((max_ref - ref) >= ref)
 			while ((*stack_b)->key != ref)
-				ft_ra(stack_b, true);
+				ft_rb(stack_b, true);
 		else
 			while ((*stack_b)->key != ref)
-				ft_rra(data, true);
+				ft_rrb(data, true);
 	}
 }

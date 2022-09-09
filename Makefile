@@ -4,7 +4,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
-ARGS		=	29825 12178 13547 4012 18707 22781 4494 2
+ARGS		=	29825  123 6 -15 -88 11 43 -76 -12178 13547 -4012 18707 22781 4494 2
 #---------GCC and FLAGS----------
 
 CC 	 		= gcc
