@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 14:49:30 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:12:23 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_rrb(t_data *data, bool print);
 void	ft_rrr(t_data *data);
 //----------------LIST UTILS---------------- //
 
+void	ft_free_stacks(t_stack *head_a, t_stack *head_b);
 void	print_data(t_data *data);
 void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);
@@ -79,6 +80,8 @@ t_stack	*ft_find_prev(t_stack **head, int ref);
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
 void	ft_show_list(t_stack **head);
 void	print_tab(int *tab, int sz);
+void	showbits(unsigned char n);
+
 //----------------SORTING---------------- /
 
 void	ft_radix(t_data *data);

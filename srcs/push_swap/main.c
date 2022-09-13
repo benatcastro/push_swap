@@ -6,12 +6,26 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:17:51 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 14:43:52 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:25:43 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
+
+/**
+ * @brief
+ * initis the stack with the giving parameters
+ * @param args
+ */
+void	ft_stack_init(t_stack **head, char **args)
+{
+	int	i;
+
+	i = -1;
+	while (args[++i])
+		ft_create_node(head, ft_atoi(args[i]));
+}
 
 void	check(t_data *data)
 {
@@ -28,8 +42,6 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	t_data	data;
 
-	stack_a = ft_calloc(1, sizeof(t_stack));
-	stack_b = ft_calloc(1, sizeof(t_stack));
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_check_args(argc, argv);
@@ -40,5 +52,5 @@ int	main(int argc, char **argv)
 	data.sz_a = ft_lst_size(&stack_a);
 	data.sz_b = ft_lst_size(&stack_b);
 	ft_sorter_manager(&data);
-	//check(&data);
+	ft_free_stacks(data.stack_a, data.stack_b);
 }

@@ -5,13 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/09 06:32:31 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 13:49:56y becastro         ###   ########.fr       */
+/*   Created: 2022/09/13 17:26:47 by becastro          #+#    #+#             */
+/*   Updated: 2022/09/13 17:26:52 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * @brief
+ * Iterations requiered for the maximun index to reach 0 bitswifting
+ * @param max_key
+ * @return int
+ */
 int	ft_max_key_binary(size_t max_key)
 {
 	size_t	i;
@@ -25,6 +31,12 @@ int	ft_max_key_binary(size_t max_key)
 	return (i);
 }
 
+/**
+ * @brief
+ * sorts the keys of the stack (sorted before) using the radix method
+ * @param data
+ * @param bit_pos
+ */
 static void	ft_bitmove(t_data *data, size_t bit_pos)
 {
 	size_t	i;

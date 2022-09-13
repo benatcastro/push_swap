@@ -46,6 +46,7 @@ sanitize: 42lib
 
 run: all
 	@clear
+	@echo "======STARTS======="
 	@./$(NAME) $(ARGS)
 
 valgrind:

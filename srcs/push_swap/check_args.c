@@ -6,17 +6,15 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 05:18:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:28:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_error(int n, int key)
+static void	ft_print_error(int n)
 {
-	ft_putstr_fd("Arg: ", 1);
-	ft_putnbr_fd(key + 1, 1);
-	ft_putstr_fd("\nNumber: (", 1);
+	ft_putstr_fd("Number: (", 1);
 	ft_putnbr_fd(n, 1);
 	ft_putstr_fd(") ", 1);
 	ft_putstr_fd("is duplicated ❌", 1);
@@ -42,10 +40,10 @@ void	ft_check_duplicates(t_stack **stack)
 		aux = (*stack);
 		while (aux->next)
 		{
-			if (aux->n == n && aux->key != key)
+			if ((aux->n == n && aux->key != key) || aux->n == aux->next->n)
 			{
-				//TODO FREE FNC
-				ft_print_error(n, key);
+				ft_free_stacks(*stack, NULL);
+				ft_print_error(n);
 				exit(EXIT_FAILURE);
 			}
 			aux = aux->next;

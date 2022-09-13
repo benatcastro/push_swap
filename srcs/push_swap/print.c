@@ -6,11 +6,12 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:29:55 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 15:09:04 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:26:32 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "limits.h"
 
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b)
 {
@@ -41,6 +42,18 @@ void	ft_show_list(t_stack **head)
 			aux = aux->next;
 		}
 	}
+}
+
+void	showbits(unsigned char n)
+{
+	int	i;
+
+	i = sizeof(n) * CHAR_BIT - 1;
+	while (--i)
+	{
+		putchar("01"[(n >> i) & 1]);
+	}
+	putchar('\n');
 }
 
 void	print_tab(int *tab, int sz)

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 15:30:14 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:38:54 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,5 @@ void	ft_short_keys(t_data *data)
 	}
 	sort_tab(tab, data->sz_a);
 	ft_set_keys(tab, data);
+	free(tab);
 }

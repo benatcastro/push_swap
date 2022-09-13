@@ -6,11 +6,41 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 15:24:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 16:37:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+ * @brief
+ * Iterates trough the stack freeing every node.
+ * @param head_a
+ * @param head_b
+ */
+void	ft_free_stacks(t_stack *head_a, t_stack *head_b)
+{
+	t_stack	*tmp;
+
+	if (head_a)
+	{
+		while (head_a)
+		{
+			tmp = head_a;
+			head_a = head_a->next;
+			free(tmp);
+		}
+	}
+	if (head_b)
+	{
+		while (head_b)
+		{
+			tmp = head_b;
+			head_b = head_b->next;
+			free(tmp);
+		}
+	}
+}
 
 /**
  * @brief
