@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 06:31:30 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:34:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "push_swap.h"
 
 typedef struct s_list
 {
@@ -23,22 +22,10 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef struct s_moves
-{
-	int		ra;
-	int		rb;
-	int		rr;
-	int		rra;
-	int		rrb;
-	int		rrr;
-	int		moves;
-}	t_moves;
-
 typedef struct s_stack
 {
 	int				key;
 	int				n;
-	struct s_moves	s_mv;
 	struct s_stack	*next;
 }	t_stack;
 

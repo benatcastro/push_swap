@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 16:12:23 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:34:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_data
 	int				sz_a;
 	int				sz_b;
 	size_t			total_moves;
-	struct s_moves	mv;
 	struct s_stack	*stack_a;
 	struct s_stack	*stack_b;
 
