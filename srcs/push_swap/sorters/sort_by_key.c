@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/13 13:42:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:23:33 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static bool	is_sorted(int *tab, int sz)
 	int	i;
 
 	i = -1;
-	while (tab[++i] && i < sz && i + 1 < sz)
-		if (tab[i] > tab[i + 1])
+	while (tab[++i] && (i + 1) < sz)
+		if (tab[i] >= tab[i + 1])
 			return (false);
 	return (true);
 }
@@ -42,9 +42,9 @@ static void	sort_tab(int *tab, int sz)
 	int	tmp;
 
 	i = -1;
-	while (tab[++i] && i < sz)
+	while (++i < sz - 1)
 	{
-		if (tab[i] > tab[i + 1] && i + 1 < sz)
+		if (tab[i] > tab[i + 1])
 		{
 			tmp = tab[i];
 			tab[i] = tab[i + 1];
@@ -75,7 +75,7 @@ void	ft_short_keys(t_data *data)
 	int		i;
 	int		*tab;
 
-	tab = ft_calloc(data->sz_a, sizeof(int) + 1);
+	tab = ft_calloc(data->sz_a, sizeof(int));
 	aux = data->stack_a;
 	i = 0;
 	while (aux)

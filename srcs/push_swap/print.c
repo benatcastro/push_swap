@@ -6,42 +6,50 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:29:55 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 05:29:58 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:09:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_data(t_data *data)
+void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("=====DATA STRUCT========\n");
-	printf("%d ra,	%d rb,	%d rr	", data->mv.ra,
-		data->mv.rb, data->mv.rr);
-	printf("%d rra,	%d rrb,	%d rrr ", data->mv.rra,
-		data->mv.rrb, data->mv.rrr);
-	printf("Total moves -> %d\n", data->mv.moves);
+	printf("===STACK A===\n");
+	ft_show_list(stack_a);
+	printf("===STACK B===\n");
+	ft_show_list(stack_b);
 }
 
-static void	print_lst(t_stack *stack)
+void	ft_show_list(t_stack **head)
 {
-	while (stack)
+	t_stack	*aux;
+
+	if (head)
 	{
-		printf("%d	->	%d,	", stack->key, stack->n);
-		printf("%d ra,	%d rb,	%d rr	", stack->s_mv.ra,
-			stack->s_mv.rb, stack->s_mv.rr);
-		printf("%d rra,	%d rrb,	%d rrr ", stack->s_mv.rra,
-			stack->s_mv.rrb, stack->s_mv.rrr);
-		printf("Total moves -> %d\n", stack->s_mv.moves);
-		stack = stack->next;
+		if (!(*head))
+			return ;
+		aux = (*head);
+		while (aux)
+		{
+			printf("Key (%d) ", aux->key);
+			printf("n (%d) ", aux->n);
+			if (aux->next)
+				printf("next (%d) ", aux->next->key);
+			else
+				printf ("next (NULL) ");
+			printf("\n");
+			aux = aux->next;
+		}
 	}
 }
 
-void	print_struct(t_data *data)
+void	print_tab(int *tab, int sz)
 {
-	write(1, "\n--- Stack a ---\n", 18);
-	printf("Size (%d)\n", data->sz_a);
-	print_lst(data->stack_a);
-	write(1, "\n--- Stack b ---\n", 18);
-	printf("Size (%d)\n", data->sz_b);
-	print_lst(data->stack_b);
+	int	i;
+
+	i = -1;
+	printf("=======\nsize: (%d)\ntab: [", sz);
+	while (++i < sz)
+		printf("%d ", tab[i]);
+	printf("]\n");
 }

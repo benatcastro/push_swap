@@ -12,49 +12,28 @@
 
 #include "push_swap.h"
 
-static int	ft_max_key(t_stack *stack)
+int	ft_max_key_binary(size_t max_key)
 {
-	int		biggest;
+	size_t	i;
 
-	biggest = stack->key;
-	while (stack)
+	i = 0;
+	while (max_key)
 	{
-		if (biggest < stack->key)
-			biggest = stack->key;
-		stack = stack->next;
+		max_key >>= 1;
+		i++;
 	}
-	return (biggest);
-}
-
-int	ft_max_key_binary(t_stack *head)
-{
-	int	iteration;
-	int	biggest;
-
-	biggest = ft_max_key(head);
-	iteration = 0;
-	while (biggest)
-	{
-		biggest >>= 1;
-		iteration++;
-	}
-	return (iteration);
+	return (i);
 }
 
 void	ft_amy_winehouse(t_data *data)
 {
 	t_stack	*aux;
-	int		i;
-	int		iterations;
 
-	iterations = ft_lst_size(&data->stack_b);
-	i = 0;
 	aux = data->stack_b;
-	while (i < iterations)
+	while (data->sz_b)
 	{
 		ft_pa(data);
 		aux = data->stack_b;
-		i++;
 	}
 }
 
@@ -84,7 +63,7 @@ void	ft_radix(t_data *data)
 
 	bit_pos = 0;
 	ft_short_keys(data);
-	i = ft_max_key_binary(data->stack_a);
+	i = ft_max_key_binary(data->sz_a);
 	while (i--)
 	{
 		ft_bitmove(data, bit_pos);

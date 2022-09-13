@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 06:44:07 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:49:30 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ t_stack	*ft_find_prev(t_stack **head, int ref);
 //show lists
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
 void	ft_show_list(t_stack **head);
-
-//----------------SORTING---------------- //
+void	print_tab(int *tab, int sz);
+//----------------SORTING---------------- /
 
 void	ft_radix(t_data *data);
 void	ft_short_keys(t_data *data);

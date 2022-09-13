@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 02:48:38 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 06:42:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:55:34 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,19 @@ bool	ft_check_short(t_stack	**stack)
  */
 void	ft_sorter_manager(t_data *data)
 {
-	if (data->sz_a == 3)
+	if (!ft_check_short(&data->stack_a))
 	{
-		data->sorter = SORT_3;
-		ft_sort_3_logic(data);
+		if (data->sz_a == 3)
+		{
+			data->sorter = SORT_3;
+			ft_sort_3_logic(data);
+		}
+		else if (data->sz_a == 5)
+		{
+			data->sorter = SORT_5;
+			ft_sort_5_logic(data);
+		}
+		else
+			ft_radix(data);
 	}
-	else if (data->sz_a == 5)
-	{
-		data->sorter = SORT_5;
-		ft_sort_5_logic(data);
-	}
-	else
-		ft_radix(data);
 }
