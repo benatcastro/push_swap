@@ -25,18 +25,6 @@ int	ft_max_key_binary(size_t max_key)
 	return (i);
 }
 
-void	ft_amy_winehouse(t_data *data)
-{
-	t_stack	*aux;
-
-	aux = data->stack_b;
-	while (data->sz_b)
-	{
-		ft_pa(data);
-		aux = data->stack_b;
-	}
-}
-
 static void	ft_bitmove(t_data *data, size_t bit_pos)
 {
 	size_t	i;
@@ -67,7 +55,8 @@ void	ft_radix(t_data *data)
 	while (i--)
 	{
 		ft_bitmove(data, bit_pos);
-		ft_amy_winehouse(data);
+		while (data->sz_b)
+			ft_pa(data);
 		bit_pos++;
 	}
 }
