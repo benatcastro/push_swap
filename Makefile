@@ -78,4 +78,5 @@ clean:
 fclean: clean
 	@rm -rf $(OBJ_DIR)
 	@rm -rf $(LIB_DIR)
+	@rm $(NAME)
 re: clean all
