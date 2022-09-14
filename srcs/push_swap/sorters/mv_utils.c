@@ -6,13 +6,13 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:06:25 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:06:23 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_search_index(int ref, t_stack **stack)
+static int	ft_search_index(int ref, t_stack *stack)
 {
 	t_stack	*aux;
 	int		i;
@@ -20,9 +20,10 @@ static int	ft_search_index(int ref, t_stack **stack)
 
 	i = 0;
 	max = 0;
-	aux = (*stack);
+	aux = stack;
 	while (aux)
 	{
+		//printf("REF: (%d)\n", aux->key);
 		if (aux->key > i && aux->key < ref)
 			i = aux->key;
 		if (aux->key > max)
@@ -67,17 +68,19 @@ void	ft_get_moves_b(t_data *data)
 	t_stack	*aux;
 	int		ref;
 
+	ref = 0;
 	stack = data->stack_a;
 	while (stack)
 	{
 		aux = data->stack_b;
-		ref = ft_search_index(stack->key, &data->stack_b);
+		ref = ft_search_index(stack->key, data->stack_b);
+		//printf("=====INDEX====: (%d)\n", ref);
 		while (ref != aux->key)
 		{
 			stack->s_mv.rb++;
 			aux = aux->next;
 		}
-		if ((int)stack->s_mv.rb > (data->sz_b / 2))
+		if (stack->s_mv.rb > (data->sz_b / 2))
 		{
 			stack->s_mv.rb = 0;
 			while (aux)
@@ -86,6 +89,7 @@ void	ft_get_moves_b(t_data *data)
 				aux = aux->next;
 			}
 		}
+		//printf("RRB MOVES: (%d), RB MOVES: (%d)\n", stack->s_mv.rrb, stack->s_mv.rb);
 		stack = stack->next;
 	}
 }
