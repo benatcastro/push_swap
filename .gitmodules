@@ -1,3 +1,6 @@
-[submodule "leofu_tester"]
-	path = leofu_tester
+[submodule "tester_yoo"]
+	path = tester_yoo
+	url = git@github.com:Yoo0lh/push_swap_tester.git
+[submodule "tester_leofoo"]
+	path = tester_leofoo
 	url = https://github.com/LeoFu9487/push_swap_tester.git

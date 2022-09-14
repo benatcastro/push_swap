@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/14 18:08:50 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/14 18:13:37 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,5 @@ void	ft_general_short(t_data *data)
 	}
 	ft_reset_data(data);
 	amy_winehouse(data);
-	ft_show_double_list(&data->stack_a, &data->stack_b);
+	//ft_show_double_list(&data->stack_a, &data->stack_b);
 }
