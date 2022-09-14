@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 19:40:36 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/14 15:47:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_search_index(int ref, t_stack **stack)
 	i = 0;
 	max = 0;
 	aux = (*stack);
-	ft_show_list(stack);
+	// ft_show_list(stack);
 	while (aux)
 	{
 		//printf("ITERATE (%d)\n", aux->key);
