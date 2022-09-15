@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/14 19:05:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:18:22 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 
 static void	ft_exec_fncs(t_data *data)
 {
+	//print_struct(data);
 	while (data->mv.ra--)
 		ft_ra(&data->stack_a, true);
 	while (data->mv.rb--)
@@ -102,7 +103,7 @@ void	ft_general_short(t_data *data)
 	{
 		ft_get_moves_a(data);
 		ft_get_moves_b(data);
-		//ft_cmp_mv(data->stack_a);
+		ft_cmp_mv(data->stack_a);
 		ft_mv_to_data(ft_get_total_moves(data->stack_a), data);
 		ft_exec_fncs(data);
 		ft_reset_stack(data->stack_a);

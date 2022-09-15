@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:39:28 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 13:44:36 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 13:50:51 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ static void	print_lst(t_stack *stack)
 	}
 }
 
-void	print_struc(t_data *data)
+void	print_struct(t_data *data)
 {
+	printf("--- sizez ----\n A: (%d)\nB: (%d)\n", data->sz_a, data->sz_b);
 	write(1, "\n--- Stack a ---\n", 18);
 	print_lst(data->stack_a);
 	write(1, "\n--- Stack b ---\n", 18);
