@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 14:18:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:21:40 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	ft_get_total_moves(t_stack *stack)
 
 	min = __INT_MAX__;
 	aux = stack;
-	//printf("TEST(%d)\n", aux->s_mv.moves);
 	while (aux)
 	{
 		aux->s_mv.moves += aux->s_mv.ra;
@@ -39,7 +38,6 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 {
 	t_stack	*aux;
 
-	//printf("COPY MOVES (%d)\n", min_moves);
 	aux = data->stack_a;
 	while (min_moves != aux->s_mv.moves)
 		aux = aux->next;
@@ -53,7 +51,6 @@ static void	ft_mv_to_data(int min_moves, t_data *data)
 
 static void	ft_exec_fncs(t_data *data)
 {
-	//print_struct(data);
 	while (data->mv.ra--)
 		ft_ra(&data->stack_a, true);
 	while (data->mv.rb--)
@@ -96,7 +93,6 @@ static void	ft_amy_winehouse(t_data	*data)
 void	ft_general_short(t_data *data)
 {
 	ft_short_keys(data);
-	//ft_show_double_list(&data->stack_a, &data->stack_b);
 	ft_pb(data);
 	ft_pb(data);
 	while (data->sz_a)
@@ -111,5 +107,4 @@ void	ft_general_short(t_data *data)
 	}
 	ft_reset_data(data);
 	ft_amy_winehouse(data);
-	//ft_show_double_list(&data->stack_a, &data->stack_b);
 }

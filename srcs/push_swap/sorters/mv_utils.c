@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 14:19:47 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:21:50 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	ft_search_index(int ref, t_stack *stack)
 	aux = stack;
 	while (aux)
 	{
-		//printf("REF: (%d)\n", aux->key);
 		if (aux->key > i && aux->key < ref)
 			i = aux->key;
 		if (aux->key > max)
