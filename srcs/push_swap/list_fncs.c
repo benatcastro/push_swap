@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:17:21 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:28:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:36:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_free_stacks(t_stack *head_a, t_stack *head_b)
 			head_a = head_a->next;
 			free(tmp);
 		}
+		free(head_a);
 	}
 	if (head_b)
 	{
@@ -39,6 +40,7 @@ void	ft_free_stacks(t_stack *head_a, t_stack *head_b)
 			head_b = head_b->next;
 			free(tmp);
 		}
+		free(head_b);
 	}
 }
 

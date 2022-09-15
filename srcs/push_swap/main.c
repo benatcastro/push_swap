@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:17:51 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:49:05 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:36:27 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	t_data	data;
 
-	stack_a = ft_calloc(1, sizeof(t_stack));
-	stack_b = ft_calloc(1, sizeof(t_stack));
 	stack_a = NULL;
 	stack_b = NULL;
 	ft_check_args(argc, argv);
