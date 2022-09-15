@@ -6,18 +6,28 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 00:48:44 by bena              #+#    #+#             */
-/*   Updated: 2022/09/15 16:43:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 16:47:15 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "limits.h"
 
+static void	swap_error(int64_t n)
+{
+	if (n > INT_MAX || n < INT_MIN)
+	{
+		ft_putstr_fd("Error int value ❌\n", 2);
+		exit(EXIT_FAILURE);
+	}
+	return ;
+}
+
 int	ft_atoi(const char *nptr)
 {
-	int				sign;
-	long long		nbr;
-	size_t			i;
+	int			sign;
+	int64_t		nbr;
+	size_t		i;
 
 	nbr = 0;
 	i = 0;
@@ -37,7 +47,6 @@ int	ft_atoi(const char *nptr)
 		nbr += (nptr[i] - '0');
 		i++;
 	}
-	if (nbr > INT_MAX || nbr < INT_MIN)
-		ft_putstr_fd("Error int value ❌\n", 2);
+	swap_error(nbr);
 	return (nbr * sign);
 }
