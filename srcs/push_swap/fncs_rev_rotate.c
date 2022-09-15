@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:11:36 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/14 18:52:52 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,5 @@ void	ft_rrr(t_data *data)
 {
 	ft_rra(data, false);
 	ft_rrb(data, false);
-	ft_putstr_fd("rra\n", 1);
+	ft_putstr_fd("rrr\n", 1);
 }

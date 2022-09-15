@@ -4,3 +4,9 @@
 [submodule "tester_leofoo"]
 	path = tester_leofoo
 	url = https://github.com/LeoFu9487/push_swap_tester.git
+[submodule "tester_ael"]
+	path = tester_ael
+	url = https://github.com/ael-bekk/push_swap_tester.git
+[submodule "tester_lmalki"]
+	path = tester_lmalki
+	url = https://github.com/lmalki-h/push_swap_tester
