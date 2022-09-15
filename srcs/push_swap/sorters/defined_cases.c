@@ -6,12 +6,12 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:19:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:40:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include "movements.h"
 /**
  * @brief
  * Declares the variable needed for the possible cases conditions when sorting

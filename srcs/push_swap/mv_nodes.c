@@ -6,11 +6,12 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 16:01:14 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:19:44 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:40:46 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "movements.h"
 
 void
 	ft_moveto_head(t_stack **stack_a, t_stack **stack_b, t_data *data, int ref)

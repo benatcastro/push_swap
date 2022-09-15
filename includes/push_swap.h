@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 13:50:54 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:36:42 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,18 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-# include "stdio.h"
 # include "stdbool.h"
+# include "structures.h"
 
-enum e_sorters
-{
-	SORT_3,
-	SORT_5,
-	GEN_SHORT,
-};
 
-typedef struct s_data
-{
-	int				sorter;
-	int				sz_a;
-	int				sz_b;
-	size_t			total_moves;
-	struct s_moves	mv;
-	struct s_stack	*stack_a;
-	struct s_stack	*stack_b;
 
-}	t_data;
 //--------------PROGRAM LOGIC-----------------//
 
 void	ft_sorter_manager(t_data *data);
-//--------------SWAP FNCS-----------------//
 
-void	ft_sa(t_stack **head_a, bool print);
-void	ft_sb(t_stack **head_b, bool print);
-void	ft_ss(t_stack **head_a, t_stack **head_b);
-void	ft_pa( t_data *data);
-void	ft_pb(t_data *data);
-void	ft_ra(t_stack **head_a, bool print);
-void	ft_rb(t_stack **head_b, bool print);
-void	ft_rr(t_stack **head_a, t_stack **head_b);
-void	ft_rra(t_data *data, bool print);
-void	ft_rrb(t_data *data, bool print);
-void	ft_rrr(t_data *data);
 //----------------LIST UTILS---------------- //
 
+void	ft_free_stacks(t_stack *head_a, t_stack *head_b);
 void	print_data(t_data *data);
 void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);

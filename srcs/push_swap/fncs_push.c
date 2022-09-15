@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 04:00:20 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:43:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_pa(t_data *data)
 	ft_lstadd_front(&data->stack_a, aux);
 	data->sz_a++;
 	data->sz_b--;
-	data->total_moves++;
 	ft_putstr_fd("pa\n", 1);
 }
 
@@ -48,6 +47,5 @@ void	ft_pb(t_data *data)
 	ft_lstadd_front(&data->stack_b, aux);
 	data->sz_a--;
 	data->sz_b++;
-	data->total_moves++;
 	ft_putstr_fd("pb\n", 1);
 }
