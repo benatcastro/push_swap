@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 16:09:55 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/16 12:38:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ void	ft_check_args(int count, char **args)
 		j = -1;
 		while (args[i][++j])
 		{
-			if (!ft_isdigit(args[i][j]))
+			if (!ft_isdigit(args[i][j]) || (args[i][j] == '-' && j != 0))
 			{
-				ft_putstr_fd("Error, argument number ", 1);
-				ft_putnbr_fd(i, 1);
-				ft_putstr_fd(" isn't a digit ❌\n", 1);
+				ft_putstr_fd("Error, argument number ", 2);
+				ft_putnbr_fd(i, 2);
+				ft_putstr_fd(" isn't a digit ❌\n", 2);
 				exit (EXIT_FAILURE);
 			}
 		}

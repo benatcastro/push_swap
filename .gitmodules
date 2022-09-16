@@ -10,6 +10,3 @@
 [submodule "tester_lmalki"]
 	path = tester_lmalki
 	url = https://github.com/lmalki-h/push_swap_tester
-[submodule "RNG_push_swap"]
-	path = RNG_push_swap
-	url = https://github.com/Alfombruh/RNG_push_swap.git
