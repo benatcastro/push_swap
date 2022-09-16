@@ -1,21 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/16 02:19:32 by bena             ###   ########.fr       */
+/*   Created: 2022/09/16 16:01:40 by becastro          #+#    #+#             */
+/*   Updated: 2022/09/16 16:01:50 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "movements.h"
 
-int	main(int argc, char **argv)
-{
-	char	*buff = malloc(100);
-	read(0,  buff, 10);
-	printf("BUFFER: (%s)\n", buff);
-}
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
+
+#endif

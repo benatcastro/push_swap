@@ -20,7 +20,7 @@ INC_DIR = includes/
 LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
 SORTERS_DIR = $(SRC_DIR)$(NAME)/sorters/
-CHECKER_DIR = $(SRC_DIR)$(NAME)/checker_bonus/
+CHECKER_DIR = $(SRC_DIR)/checker/
 
 #---------------PREFIX and SUFFIX-----------------
 
@@ -42,6 +42,7 @@ push_swap: 42lib
 checker: push_swap
 	@$(CC) $(CFLAGS) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o checker_bonus
 	@echo "Checker Compiled"
+
 sanitize: 42lib
 	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
 	@echo "Push_swap with sanitize Compiled"
@@ -72,7 +73,6 @@ gnl: mk_dirs
 	@clear
 	@echo "GNL Compiled"
 
-
 clean:
 	@make clean -C srcs/libft
 	@make clean -C srcs/ft_printf
@@ -82,4 +82,5 @@ clean:
 fclean: clean
 	@rm -rf $(OBJ_DIR)
 	@rm -rf $(LIB_DIR)
+
 re: clean all
