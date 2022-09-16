@@ -6,37 +6,40 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/16 16:02:02 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/16 18:37:47 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 #include "movements_bonus.h"
+#include "checker_bonus.h"
 
-static size_t	read_size(void)
+static char	*read_input(void)
 {
 	int32_t	rd;
-	size_t	sz;
 	char	*buffer;
+	char	*moves;
 
+	moves = NULL;
 	rd = 1;
-	sz = 1;
 	buffer = ft_calloc(1, 1);
 	while (rd > 0)
 	{
 		rd = read(0, buffer, 1);
-		printf("buffer (%c)\n", buffer[0]);
-		sz++;
+		moves = ft_append_char(moves, buffer[0]);
+		//printf("MOVES (%s)\n", moves);
 	}
-	return (sz);
+	return (free(buffer), moves);
 }
 
 int	main(int argc, char **argv)
 {
-	char	*commands;
+	char	*input;
+	char	*test;
 
-	commands = ft_calloc(read_size(), sizeof(char));
-	printf("TEST1 (%zu)\n", read_size());
-	// read(0, commands, read_size());
-	// printf("Commands(%s)\n", commands);
+	test = ft_strdup("hello");
+	input = ft_append_char(test, 'c');
+	printf("moves (%s)\n", input);
+	free(test);
+	free(input);
 }

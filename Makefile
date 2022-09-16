@@ -1,5 +1,6 @@
 #---------NAMES--------------
 NAME = push_swap
+CHECKER_NAME = checker_bonus
 LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
@@ -39,24 +40,26 @@ push_swap: 42lib
 	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
 	@echo "Push_swap Compiled"
 
+valgrind:
+	@clear
+	@$(VALGRIND) ./$(NAME) $(ARGS)
+
 checker: push_swap
-	@$(CC) $(CFLAGS) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o checker_bonus
+	@$(CC) $(CFLAGS) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
 	@echo "Checker Compiled"
 
-sanitize: 42lib
-	@$(CC) $(CFLAGS) $(SANITIZE) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
-	@echo "Push_swap with sanitize Compiled"
+sanitize_checker: push_swap
+	@$(CC) $(CFLAGS) $(SANITIZE) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
+	@echo "Checker sanitize Compiled"
+
+valgrind_checker: checker
 	@clear
-	@./$(NAME) $(ARGS)
+	@$(VALGRIND) ./$(CHECKER_NAME)
 
 run: all
 	@clear
 	@echo "====STARTS======"
 	@./$(NAME) $(ARGS)
-
-valgrind:
-	@clear
-	@$(VALGRIND) ./$(NAME) $(ARGS)
 
 libft: mk_dirs
 	@make -C srcs/libft
@@ -82,5 +85,7 @@ clean:
 fclean: clean
 	@rm -rf $(OBJ_DIR)
 	@rm -rf $(LIB_DIR)
+	@rm $(NAME)
+	@rm checker_bonus
 
 re: clean all
