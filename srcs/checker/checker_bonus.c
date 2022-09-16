@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/16 18:37:47 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:23:57 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static char	*read_input(void)
 
 	moves = NULL;
 	rd = 1;
-	buffer = ft_calloc(1, 1);
 	while (rd > 0)
 	{
+		buffer = ft_calloc(1, 1);
 		rd = read(0, buffer, 1);
 		moves = ft_append_char(moves, buffer[0]);
 		//printf("MOVES (%s)\n", moves);
@@ -32,14 +32,17 @@ static char	*read_input(void)
 	return (free(buffer), moves);
 }
 
-int	main(int argc, char **argv)
+int main(void)
 {
-	char	*input;
-	char	*test;
-
-	test = ft_strdup("hello");
-	input = ft_append_char(test, 'c');
-	printf("moves (%s)\n", input);
-	free(test);
-	free(input);
+	printf("append: (%s)\n", read_input());
 }
+
+// int	main(int argc, char **argv)
+// {
+// 	char	*input;
+// 	char	*test;
+
+// 	input = ft_append_char(test, 'c');
+// 	printf("moves (%s)\n", input);
+// 	free(test);
+// 	free(input);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 16:03:37 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/16 18:37:17 by becastro         ###   ########.fr       */
+/*   Created: 2022/09/16 20:22:28 by becastro          #+#    #+#             */
+/*   Updated: 2022/09/16 20:31:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_append_char(char *str, char c)
 		str[1] = '\0';
 		return (str);
 	}
-	str_len = ft_strlen(str) + 2;
+	str_len = ft_strlen(str) + 1;
 	tmp = ft_strdup(str);
 	free(str);
 	str = ft_calloc(str_len, sizeof(char));
