@@ -23,6 +23,7 @@ LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
 SORTERS_DIR = $(SRC_DIR)$(NAME)/sorters/
 CHECKER_DIR = $(SRC_DIR)/checker/
+EXECS_DIR	= execs/
 
 
 #--------------------SOURCES-------------------------
@@ -35,7 +36,6 @@ SOURCES =	check_args		\
 			list_fncs		\
 			list_utils		\
 			mv_nodes		\
-			print			\
 			stack_init		\
 
 SOURCES_SORTERS =	defined_cases		\
@@ -57,7 +57,12 @@ SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
 
 
 #---------------------RULES---------------------------
-all: push_swap
+all: $(NAME)
+
+$(NAME): 42lib
+	@mkdir -p $(EXECS_DIR)
+	@$(CC) $(CFLAGS) $(SRC) $(PROJECT_DIR)main.c $(SRC_SORTERS) $(LIB_FLAGS) -o $(EXECS_DIR)$(NAME)
+	@echo "Push_swap Compiled"
 
 42lib: libft
 
@@ -70,15 +75,15 @@ mk_dirs:
 	@mkdir -p $(OBJ_DIR)
 
 push_swap: 42lib
-	@$(CC) $(CFLAGS) $(SRC) $(PROJECT_DIR)main.c $(SRC_SORTERS) $(LIB_FLAGS) -o $(NAME)
-	@echo "Push_swap Compiled"
+
 
 valgrind:
 	@clear
 	@$(VALGRIND) ./$(NAME) $(ARGS)
 
-checker: push_swap
-	@$(CC) $(CFLAGS) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(CHECKER_NAME)
+bonus: push_swap
+	@mkdir -p $(EXECS_DIR)
+	@$(CC) $(CFLAGS) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)
 	@echo "Checker Compiled"
 
 sanitize_checker: push_swap

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/17 21:04:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:16:23 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static void	check_moves(char *s, t_data *data)
  * @param data
  * @return char*
  */
-static void	*read_input(t_data *data)
+static void	read_input(t_data *data)
 {
 	int32_t	rd;
 	char	buffer;

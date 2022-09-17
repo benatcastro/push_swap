@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 16:01:40 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 18:32:21 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:16:08 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 char	*ft_append_char(char *str, char c);
 void	parse_input(t_data *data);
-char	*read_input(t_data *data);
 bool	ft_strcmp(char *s1, char *s2);
 
 #endif
