@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:40:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:21:02 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int	ft_get_total_moves(t_stack *stack)
 {
 	t_stack	*aux;
-	int		min;
+	size_t	min;
 
 	min = __INT_MAX__;
 	aux = stack;
@@ -35,7 +35,7 @@ static int	ft_get_total_moves(t_stack *stack)
 	return (min);
 }
 
-static void	ft_mv_to_data(int min_moves, t_data *data)
+static void	ft_mv_to_data(size_t min_moves, t_data *data)
 {
 	t_stack	*aux;
 

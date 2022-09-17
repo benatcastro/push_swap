@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 04:23:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:33:44 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static void	ft_print_error(int n)
  */
 void	ft_check_duplicates(t_stack **stack)
 {
-	t_stack	*index;
-	t_stack	*aux;
-	int		n;
-	int		key;
+	t_stack		*index;
+	t_stack		*aux;
+	int32_t		n;
+	u_int32_t	key;
 
 	index = (*stack);
 	while (index->next)
@@ -43,7 +43,7 @@ void	ft_check_duplicates(t_stack **stack)
 			if (aux->n == n && aux->key != key)
 			{
 				ft_free_stacks(*stack, NULL);
-				ft_print_error(n, key);
+				ft_print_error(n);
 				exit(EXIT_FAILURE);
 			}
 			aux = aux->next;

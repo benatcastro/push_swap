@@ -6,17 +6,17 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 15:06:54 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 04:24:24 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:20:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_search_index(int ref, t_stack *stack)
+static size_t	ft_get_key(size_t ref, t_stack *stack)
 {
 	t_stack	*aux;
-	int		i;
-	int		max;
+	size_t	i;
+	size_t	max;
 
 	i = 0;
 	max = 0;
@@ -65,13 +65,13 @@ void	ft_get_moves_b(t_data *data)
 {
 	t_stack	*stack;
 	t_stack	*aux;
-	int		ref;
+	size_t	ref;
 
 	stack = data->stack_a;
 	while (stack)
 	{
 		aux = data->stack_b;
-		ref = ft_search_index(stack->key, data->stack_b);
+		ref = ft_get_key(stack->key, data->stack_b);
 		while (ref != aux->key)
 		{
 			stack->s_mv.rb++;

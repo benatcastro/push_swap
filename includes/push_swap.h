@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 04:25:55 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:32:00 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "libft.h"
 # include "stdbool.h"
 # include "structures.h"
-
-
 
 //--------------PROGRAM LOGIC-----------------//
 
@@ -30,9 +28,8 @@ void	print_data(t_data *data);
 void	print_struct(t_data *data);
 int		ft_find_min_nbr(t_stack **stack);
 t_stack	*ft_find_nbr_node(t_stack **stack, int nbr);
-int		ft_find_n_node(t_stack **stack, int ref);
 void	ft_moveto_head(t_stack **stack_a,
-			t_stack **stack_b, t_data *data, int ref);
+			t_stack **stack_b, t_data *data, u_int32_t ref);
 int		ft_get_median(t_stack **stack);
 int		ft_stack_size(t_stack **head);
 void	ft_swap_node(t_stack **head, t_stack *node1, t_stack *node2);
@@ -46,8 +43,9 @@ void	ft_check_duplicates(t_stack **stack);
 void	ft_stack_init(t_stack **head, char **args);
 size_t	ft_lst_size(t_stack **head);
 t_stack	*ft_lastnode(t_stack **head);
+int		ft_find_n_node(t_stack **stack, u_int32_t ref);
 t_stack	*ft_find_node(t_stack **head, u_int32_t ref);
-t_stack	*ft_find_prev(t_stack **head, int ref);
+t_stack	*ft_find_prev(t_stack **head, u_int32_t ref);
 //show lists
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);
 void	ft_show_list(t_stack **head);

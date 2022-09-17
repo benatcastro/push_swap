@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 14:22:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:18:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_set_keys(int *tab, t_data *data)
 
 	key = 1;
 	i = -1;
-	while (++i < data->sz_a)
+	while (++i < (int)data->sz_a)
 	{
 		ft_find_nbr_node(&data->stack_a, tab[i])->key = key;
 		key++;
