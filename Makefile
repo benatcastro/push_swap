@@ -76,7 +76,6 @@ mk_dirs:
 
 push_swap: 42lib
 
-
 valgrind:
 	@clear
 	@$(VALGRIND) ./$(NAME) $(ARGS)
@@ -118,12 +117,14 @@ clean:
 	@make clean -C srcs/libft
 	@make clean -C srcs/ft_printf
 	@make clean -C srcs/gnl
-	@clear
+	@rm -rf $(OBJ_DIR)
+	@echo "Clean done"
 
 fclean: clean
-	@rm -rf $(OBJ_DIR)
 	@rm -rf $(LIB_DIR)
-	@rm $(NAME)
-	@rm checker_bonus
+	@rm -rf $(EXECS_DIR)
+	@echo "Fclean Done"
 
 re: clean all
+
+.PHONY: all 42lib mk_dirs push_swap valgrind bonus sanitize_checker sanitize valgrind valgrind_checker run clean fclean re

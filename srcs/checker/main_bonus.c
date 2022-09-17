@@ -6,12 +6,12 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/17 21:16:23 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:24:19 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "movements.h"
+#include "push_swap_bonus.h"
+#include "movements_bonus.h"
 #include "checker_bonus.h"
 
 /**
