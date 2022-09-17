@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:22:28 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 19:43:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:05:08 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "stdbool.h"
 #include "libft.h"
 
+/**
+ * @brief
+ * Takes a string as a paramter and appends the char c to the end of it
+ * @param str
+ * @param c
+ * @return char*
+ */
 char	*ft_append_char(char *str, char c)
 {
 	char	*tmp;
@@ -37,6 +44,14 @@ char	*ft_append_char(char *str, char c)
 	return (str);
 }
 
+/**
+ * @brief
+ * Str compare refactorized
+ * @param s1
+ * @param s2
+ * @return true
+ * @return false
+ */
 bool	ft_strcmp(char *s1, char *s2)
 {
 	int32_t	i;

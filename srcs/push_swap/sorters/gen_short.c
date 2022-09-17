@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 19:28:06 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:10:57 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ static int	ft_get_total_moves(t_stack *stack)
 	return (min);
 }
 
+/**
+ * @brief
+ *
+ * @param min_moves
+ * @param data
+ */
 static void	ft_mv_to_data(size_t min_moves, t_data *data)
 {
 	t_stack	*aux;
@@ -50,6 +56,11 @@ static void	ft_mv_to_data(size_t min_moves, t_data *data)
 	data->mv.rrr = aux->s_mv.rrr;
 }
 
+/**
+ * @brief
+ * Executes the movements stored in the data structure
+ * @param data
+ */
 static void	ft_exec_fncs(t_data *data)
 {
 	while (data->mv.ra--)
@@ -66,7 +77,12 @@ static void	ft_exec_fncs(t_data *data)
 		ft_rrr(data, true);
 }
 
-//does stuff
+/**
+ * @brief
+ * from back to black comes back to a
+ * takes all of the nodes in stack B and refills stack A
+ * @param data
+ */
 static void	ft_amy_winehouse(t_data	*data)
 {
 	t_stack	*aux;
@@ -91,6 +107,11 @@ static void	ft_amy_winehouse(t_data	*data)
 		ft_pa(data, true);
 }
 
+/**
+ * @brief
+ * Function structure for the general shorting algo
+ * @param data
+ */
 void	ft_general_short(t_data *data)
 {
 	ft_short_keys(data);

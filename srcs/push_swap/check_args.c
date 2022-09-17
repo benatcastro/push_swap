@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 15:51:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 21:11:49 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	ft_print_error(int n)
 {
+	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd("Number: (", 2);
 	ft_putnbr_fd(n, 2);
 	ft_putstr_fd(") ", 2);
@@ -60,7 +61,7 @@ void	ft_check_args(int count, char **args)
 	i = 0;
 	if (count <= 1)
 	{
-		ft_putstr_fd("Error, missing arguments ❌\n", 2);
+		ft_putstr_fd("Error\nMissing arguments ❌\n", 2);
 		exit (EXIT_FAILURE);
 	}
 	while (args[++i])
@@ -70,7 +71,7 @@ void	ft_check_args(int count, char **args)
 		{
 			if (!ft_isdigit(args[i][j]) || (args[i][j] == '-' && j != 0))
 			{
-				ft_putstr_fd("Error, argument number ", 2);
+				ft_putstr_fd("Error\nArgument number ", 2);
 				ft_putnbr_fd(i, 2);
 				ft_putstr_fd(" isn't a digit ❌\n", 2);
 				exit (EXIT_FAILURE);
