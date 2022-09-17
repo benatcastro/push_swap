@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/14 18:52:52 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:23:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,10 @@ void	ft_rrb(t_data *data, bool print)
  * @param head_a head of stack A
  * @param head_b head of stack B
  */
-void	ft_rrr(t_data *data)
+void	ft_rrr(t_data *data, bool print)
 {
 	ft_rra(data, false);
 	ft_rrb(data, false);
-	ft_putstr_fd("rrr\n", 1);
+	if (print)
+		ft_putstr_fd("rrr\n", 1);
 }

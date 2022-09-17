@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 14:55:12 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 15:21:02 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:28:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ static void	ft_exec_fncs(t_data *data)
 	while (data->mv.rb--)
 		ft_rb(&data->stack_b, true);
 	while (data->mv.rr--)
-		ft_rr(&data->stack_a, &data->stack_b);
+		ft_rr(&data->stack_a, &data->stack_b, true);
 	while (data->mv.rra--)
 		ft_rra(data, true);
 	while (data->mv.rrb--)
 		ft_rrb(data, true);
 	while (data->mv.rrr--)
-		ft_rrr(data);
+		ft_rrr(data, true);
 }
 
 //does stuff
@@ -88,14 +88,14 @@ static void	ft_amy_winehouse(t_data	*data)
 	}
 	ft_exec_fncs(data);
 	while (data->sz_b)
-		ft_pa(data);
+		ft_pa(data, true);
 }
 
 void	ft_general_short(t_data *data)
 {
 	ft_short_keys(data);
-	ft_pb(data);
-	ft_pb(data);
+	ft_pb(data, true);
+	ft_pb(data, true);
 	while (data->sz_a)
 	{
 		ft_get_moves_a(data);
@@ -104,7 +104,7 @@ void	ft_general_short(t_data *data)
 		ft_mv_to_data(ft_get_total_moves(data->stack_a), data);
 		ft_exec_fncs(data);
 		ft_reset_stack(data->stack_a);
-		ft_pb(data);
+		ft_pb(data, true);
 	}
 	ft_reset_data(data);
 	ft_amy_winehouse(data);

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:43:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:22:27 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ If the stack B is empty it does nothing
  * @param head_a -> head of stack A
  * @param head_b -> head of stack B
  */
-void	ft_pa(t_data *data)
+void	ft_pa(t_data *data, bool print)
 {
 	t_stack	*aux;
 
@@ -28,7 +28,8 @@ void	ft_pa(t_data *data)
 	ft_lstadd_front(&data->stack_a, aux);
 	data->sz_a++;
 	data->sz_b--;
-	ft_putstr_fd("pa\n", 1);
+	if (print)
+		ft_putstr_fd("pa\n", 1);
 }
 
 /**
@@ -38,7 +39,7 @@ If the stack a is empty it does nothing
  * @param head_a -> head of stack A
  * @param head_b -> head of stack B
  */
-void	ft_pb(t_data *data)
+void	ft_pb(t_data *data, bool print)
 {
 	t_stack	*aux;
 
@@ -47,5 +48,6 @@ void	ft_pb(t_data *data)
 	ft_lstadd_front(&data->stack_b, aux);
 	data->sz_a--;
 	data->sz_b++;
-	ft_putstr_fd("pb\n", 1);
+	if (print)
+		ft_putstr_fd("pb\n", 1);
 }

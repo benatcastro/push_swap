@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 03:44:43 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:40:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:29:24 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ void	ft_sort_5_logic(t_data *data)
 	if (ft_check_short(&data->stack_a))
 		return ;
 	ft_moveto_head(&data->stack_a, NULL, data, ft_find_min_nbr(&data->stack_a));
-	ft_pb(data);
+	ft_pb(data, true);
 	ft_moveto_head(&data->stack_a, NULL, data, ft_find_min_nbr(&data->stack_a));
-	ft_pb(data);
+	ft_pb(data, true);
 	ft_sort_3_logic(data);
-	ft_pa(data);
-	ft_pa(data);
+	ft_pa(data, true);
+	ft_pa(data, true);
 }

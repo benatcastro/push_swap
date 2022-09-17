@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/09 05:17:44 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:29:44 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ void	ft_sb(t_stack **head_b, bool print)
  * @param head_a
  * @param head_b
  */
-void	ft_ss(t_stack **head_a, t_stack **head_b)
+void	ft_ss(t_stack **head_a, t_stack **head_b, bool print)
 {
 	ft_sa(head_a, false);
 	ft_sb(head_b, false);
-	ft_putstr_fd("ss\n", 1);
+	if (print)
+		ft_putstr_fd("ss\n", 1);
 }
