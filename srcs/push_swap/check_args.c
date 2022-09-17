@@ -6,13 +6,13 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/16 12:38:09 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 04:23:16 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_error(int n, int key)
+static void	ft_print_error(int n)
 {
 	ft_putstr_fd("Number: (", 1);
 	ft_putnbr_fd(n, 1);

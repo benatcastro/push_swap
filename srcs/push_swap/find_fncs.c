@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:52:23 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/05 15:29:35 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 04:25:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_stack	*ft_find_prev(t_stack **head, int ref)
  * @return int nbr of the node with the ref param
  * if no ref is find return the key of the last node
  */
-int	ft_find_n_node(t_stack **stack, int ref)
+int	ft_find_n_node(t_stack **stack, u_int32_t ref)
 {
 	t_stack	*aux;
 

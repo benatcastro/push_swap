@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/15 15:47:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 04:25:55 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_check_duplicates(t_stack **stack);
 void	ft_stack_init(t_stack **head, char **args);
 size_t	ft_lst_size(t_stack **head);
 t_stack	*ft_lastnode(t_stack **head);
-t_stack	*ft_find_node(t_stack **head, int ref);
+t_stack	*ft_find_node(t_stack **head, u_int32_t ref);
 t_stack	*ft_find_prev(t_stack **head, int ref);
 //show lists
 void	ft_show_double_list(t_stack **stack_a, t_stack **stack_b);

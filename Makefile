@@ -1,4 +1,4 @@
-t #---------NAMES--------------
+#---------NAMES--------------
 NAME = push_swap
 CHECKER_NAME = checker_bonus
 LIB_NAME 	= 42lib.a
@@ -7,16 +7,17 @@ GNL 		= gnl
 PRINTF 		= ft_printf
 ARGS		=	10 10
 #---------GCC and FLAGS----------
-
+LIB_FLAGS	= $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR)
 CC 	 		= gcc
 AR			= ar rc
-#CFLAGS 		= -Wall -Wextra -Werror -g3
+CFLAGS 		= -Wall -Wextra -Werror -g3
 SANITIZE 	= -fsanitize=address -g3
 VALGRIND 	= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 #---------DIRECTORIES-----------
 SRC_DIR = srcs/
 OBJ_DIR = objs/
+OBJ_PUSH_SWAP = $(OBJ_DIR)/push_swap
 INC_DIR = includes/
 LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
@@ -36,7 +37,6 @@ SOURCES =	check_args		\
 			main			\
 			mv_nodes		\
 			print			\
-			sorters			\
 			stack_init		\
 
 SOURCES_SORTERS =	defined_cases		\
@@ -51,15 +51,18 @@ SOURCES_CHECKER =	checker_bonus		\
 					checker_utils_bonus	\
 #---------------PREFIX and SUFFIX-------------------
 
-SOURCES = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
-SOURCES_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix) .c, $(SOURCES_SORTERS))
-SOURCES_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix) .c, $(SOURCES_CHECKER))
+SRC = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
+
+SRC_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix .c, $(SOURCES_SORTERS)))
+
+SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
 
 
 #---------------------RULES---------------------------
 all: push_swap
 
-42lib: libft
+42lib:
+
 	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)*
 	@ranlib $(LIB_DIR)$(LIB_NAME)
 	@echo "42 Lib Compiled"
@@ -69,7 +72,7 @@ mk_dirs:
 	@mkdir -p $(OBJ_DIR)
 
 push_swap: 42lib
-	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(NAME)
+	@$(CC) $(CFLAGS) $(SRC) $(SRC_SORTERS) $(LIB_FLAGS) -o $(NAME)
 	@echo "Push_swap Compiled"
 
 valgrind:
@@ -77,7 +80,7 @@ valgrind:
 	@$(VALGRIND) ./$(NAME) $(ARGS)
 
 checker: push_swap
-	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
+	@$(CC) $(CFLAGS) $(SRC) $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(CHECKER_NAME)
 	@echo "Checker Compiled"
 
 sanitize_checker: push_swap
