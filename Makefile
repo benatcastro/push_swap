@@ -47,10 +47,13 @@ SOURCES_SORTERS =	defined_cases		\
 					sort_by_key			\
 					sorter_logic		\
 
-SOURCES_CHECKER =
+SOURCES_CHECKER =	checker_bonus		\
+					checker_utils_bonus	\
 #---------------PREFIX and SUFFIX-------------------
 
-
+SOURCES = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
+SOURCES_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix) .c, $(SOURCES_SORTERS))
+SOURCES_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix) .c, $(SOURCES_CHECKER))
 
 
 #---------------------RULES---------------------------
