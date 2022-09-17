@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/16 20:23:57 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/16 20:57:44 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,26 @@ static char	*read_input(void)
 		buffer = ft_calloc(1, 1);
 		rd = read(0, buffer, 1);
 		moves = ft_append_char(moves, buffer[0]);
-		//printf("MOVES (%s)\n", moves);
 	}
 	return (free(buffer), moves);
 }
 
-int main(void)
+int	main(int argc, char **argv)
 {
-	printf("append: (%s)\n", read_input());
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	t_data	data;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	ft_check_args(argc, argv);
+	ft_stack_init(&stack_a, &argv[1]);
+	ft_check_duplicates(&stack_a);
+	data.stack_a = stack_a;
+	data.stack_b = stack_b;
+	data.sz_a = ft_lst_size(&stack_a);
+	data.sz_b = ft_lst_size(&stack_b);
+	printf("test(%s)\n", read_input());
 }
 
 // int	main(int argc, char **argv)

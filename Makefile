@@ -1,4 +1,4 @@
-#---------NAMES--------------
+t #---------NAMES--------------
 NAME = push_swap
 CHECKER_NAME = checker_bonus
 LIB_NAME 	= 42lib.a
@@ -23,8 +23,37 @@ PROJECT_DIR = $(SRC_DIR)$(NAME)/
 SORTERS_DIR = $(SRC_DIR)$(NAME)/sorters/
 CHECKER_DIR = $(SRC_DIR)/checker/
 
-#---------------PREFIX and SUFFIX-----------------
 
+#--------------------SOURCES-------------------------
+SOURCES =	check_args		\
+			find_fncs		\
+			fncs_push		\
+			fncs_rev_rotate	\
+			fncs_rotate		\
+			fncs_swap		\
+			list_fncs		\
+			list_utils		\
+			main			\
+			mv_nodes		\
+			print			\
+			sorters			\
+			stack_init		\
+
+SOURCES_SORTERS =	defined_cases		\
+					defined_cases_utils	\
+					gen_short			\
+					mv_utils			\
+					reset_fncs			\
+					sort_by_key			\
+					sorter_logic		\
+
+SOURCES_CHECKER =
+#---------------PREFIX and SUFFIX-------------------
+
+
+
+
+#---------------------RULES---------------------------
 all: push_swap
 
 42lib: libft
@@ -45,7 +74,7 @@ valgrind:
 	@$(VALGRIND) ./$(NAME) $(ARGS)
 
 checker: push_swap
-	@$(CC) $(CFLAGS) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
+	@$(CC) $(CFLAGS) $(PROJECT_DIR)*.c $(SORTERS_DIR)*.c $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
 	@echo "Checker Compiled"
 
 sanitize_checker: push_swap
