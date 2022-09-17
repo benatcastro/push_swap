@@ -93,6 +93,14 @@ valgrind_checker: checker
 	@clear
 	@$(VALGRIND) ./$(CHECKER_NAME) 2 1
 
+tester:
+	@echo "Cloning testers..."
+	@git submodule init
+	@git submodule update
+	@clear
+	@echo "Testers cloned!"
+
+
 run: all
 	@clear
 	@echo "====STARTS======"
@@ -127,4 +135,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY: all 42lib mk_dirs push_swap valgrind bonus sanitize_checker sanitize valgrind valgrind_checker run clean fclean re
+.PHONY: testers all 42lib mk_dirs push_swap valgrind bonus sanitize_checker sanitize valgrind valgrind_checker run clean fclean re
