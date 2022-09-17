@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/17 15:45:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/17 15:50:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	data.stack_b = stack_b;
 	data.sz_a = ft_lst_size(&stack_a);
 	data.sz_b = ft_lst_size(&stack_b);
+	ft_free_stacks(data.stack_a, data.stack_b);
 	printf("test(%s)\n", read_input());
 }
 
