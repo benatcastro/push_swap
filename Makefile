@@ -10,7 +10,7 @@ ARGS		=	10 10
 LIB_FLAGS	= $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR)
 CC 	 		= gcc
 AR			= ar rc
-CFLAGS 		= -Wall -Wextra -Werror -g3
+CFLAGS 		= -Wall -Wextra -Werror #$(SANITIZE)
 SANITIZE 	= -fsanitize=address -g3
 VALGRIND 	= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
@@ -82,12 +82,12 @@ checker: push_swap
 	@echo "Checker Compiled"
 
 sanitize_checker: push_swap
-	@$(CC) $(CFLAGS) $(SANITIZE) $(CHECKER_DIR)*.c $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR) -o $(CHECKER_NAME)
+		@$(CC) $(CFLAGS) $(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(CHECKER_NAME)
 	@echo "Checker sanitize Compiled"
 
 valgrind_checker: checker
 	@clear
-	@$(VALGRIND) ./$(CHECKER_NAME)
+	@$(VALGRIND) ./$(CHECKER_NAME) 2 1
 
 run: all
 	@clear
