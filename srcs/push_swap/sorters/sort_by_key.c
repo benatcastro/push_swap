@@ -6,54 +6,53 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 15:18:21 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:31:17 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/**
- * @brief
- * checks if an array of integers is sorted
- * @param tab -> array to be checked
- * @param sz -> size of the array
- * @return true
- * @return false
- */
-static bool	is_sorted(int *tab, int sz)
+static void	bubble_short(int *tab, size_t sz)
 {
-	int	i;
+	int32_t	tmp;
+	size_t	step;
+	size_t	i;
 
-	i = -1;
-	while (tab[++i] && (i + 1) < sz)
-		if (tab[i] >= tab[i + 1])
-			return (false);
-	return (true);
-}
-
-/**
- * @brief
- * Binary sorting of tab
- * @param tab -> array of ints to be sorted
- */
-static void	sort_tab(int *tab, int sz)
-{
-	int	i;
-	int	tmp;
-
-	i = -1;
-	while (++i < sz - 1)
+	step = 0;
+	while (step < sz - 1)
 	{
-		if (tab[i] > tab[i + 1])
+		i = 0;
+		while (i < sz - step - 1)
 		{
-			tmp = tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = tmp;
+			if (tab[i] > tab[i + 1])
+			{
+				tmp = tab[i];
+				tab[i] = tab[i + 1];
+				tab[i + 1] = tmp;
+			}
+			i++;
 		}
+		step++;
 	}
-	if (!is_sorted(tab, sz))
-		sort_tab(tab, sz);
 }
+
+// static void	bubble_short_test(int *tab, size_t sz)
+// {
+// 	int32_t	tmp;
+
+// 	for (size_t step = 0; step < sz - 1; step++)
+// 	{
+// 		for (size_t i = 0; i < sz - step - 1; i++)
+// 		{
+// 			if (tab[i] > tab[i + 1])
+// 			{
+// 				tmp = tab[i];
+// 				tab[i] = tab[i + 1];
+// 				tab[i + 1] = tmp;
+// 			}
+// 		}
+// 	}
+// }
 
 static void	ft_set_keys(int *tab, t_data *data)
 {
@@ -84,7 +83,7 @@ void	ft_short_keys(t_data *data)
 		i++;
 		aux = aux->next;
 	}
-	sort_tab(tab, data->sz_a);
+	bubble_short(tab, data->sz_a);
 	ft_set_keys(tab, data);
 	free(tab);
 }
