@@ -7,17 +7,19 @@ GNL 		= gnl
 PRINTF 		= ft_printf
 ARGS		=	10 10
 #---------GCC and FLAGS----------
-LIB_FLAGS	= $(LIB_DIR)$(LIB_NAME) -I $(INC_DIR)
+LIB_FLAG	= $(LIB_DIR)$(LIB_NAME)
+INC_FLAG	= -I $(INC_DIR)
+CFLAGS 		= -Wall -Wextra -Werror #$(SANITIZE)
 CC 	 		= gcc
 AR			= ar rc
-CFLAGS 		= -Wall -Wextra -Werror #$(SANITIZE)
 SANITIZE 	= -fsanitize=address -g3
 VALGRIND 	= valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 #---------DIRECTORIES-----------
 SRC_DIR = srcs/
-OBJ_DIR = objs/
-OBJ_PUSH_SWAP = $(OBJ_DIR)/push_swap
+OBJ_DIR = objs
+PUSH_SWAP_OBJ_DIR = $(OBJ_DIR)/push_swap/
+CHECKER_OBJ_DIR = $(OBJ_DIR)/checker/
 INC_DIR = includes/
 LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
@@ -27,7 +29,8 @@ EXECS_DIR	= execs/
 
 
 #--------------------SOURCES-------------------------
-SOURCES =	check_args		\
+SOURCES =	push_swap		\
+			check_args		\
 			find_fncs		\
 			fncs_push		\
 			fncs_rev_rotate	\
@@ -55,26 +58,36 @@ SRC_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix .c, $(SOURCES_SORTERS)))
 
 SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
 
+PUSH_SWAP_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES)))
+
+PUSH_SWAP_SORTERS_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES_SORTERS)))
 
 #---------------------RULES---------------------------
 all: $(NAME)
 
-$(NAME): 42lib
-	@mkdir -p $(EXECS_DIR)
-	@$(CC) $(CFLAGS) $(SRC) $(PROJECT_DIR)main.c $(SRC_SORTERS) $(LIB_FLAGS) -o $(EXECS_DIR)$(NAME)
-	@echo "Push_swap Compiled"
+$(NAME): 42lib $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+
+$(PUSH_SWAP_OBJ_DIR)%.o: $(PROJECT_DIR)%.c
+	@mkdir -p $(PUSH_SWAP_OBJ_DIR)
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+
+$(PUSH_SWAP_OBJ_DIR)%.o: $(SORTERS_DIR)%.c
+	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+
+$(PUSH_SWAP):
+	$(CC) (CFLAGS) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)/$(NAME)
 
 42lib: libft
-
-	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)*
+	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)/42lib/*.o
 	@ranlib $(LIB_DIR)$(LIB_NAME)
 	@echo "42 Lib Compiled"
 
 mk_dirs:
+	@mkdir -p $(OBJ_DIR)/42lib
 	@mkdir -p $(LIB_DIR)
 	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/$(NAME)
 
-push_swap: 42lib
 
 valgrind:
 	@clear

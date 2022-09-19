@@ -52,21 +52,17 @@ RM = rm -f
 LIBRARIES_DIR = ../../libraries/
 NAME = $(LIBRARIES_DIR)libft.a
 INCLUDES = ../../includes/
-OBJ_DIR = ../../objs/
+OBJ_DIR = ../../objs/42lib/
 
 
 SRC = $(addsuffix .c, $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 OBJF = .cache_exists
-
+SRC_DIR = ./
 
 all: $(OBJ)
-
-#$(NAME) : $(OBJ)
-#	@$(AR) $(NAME) $(OBJ)
-
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@$(CC) $(CC_FLAGS) -I $(INCLUDES) -c $< -o $@
+	$(CC) $(CC_FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJ)
