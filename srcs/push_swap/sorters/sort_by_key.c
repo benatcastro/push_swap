@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/19 18:37:55 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:39:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	bubble_short(int *tab, size_t sz)
 		step++;
 	}
 }
-
 
 static void	ft_set_keys(int *tab, t_data *data)
 {

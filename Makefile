@@ -86,7 +86,7 @@ bonus: push_swap
 	@echo "Checker Compiled"
 
 sanitize_checker: push_swap
-		@$(CC) $(CFLAGS) $(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(CHECKER_NAME)
+	@$(CC) $(CFLAGS)$(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)_sanitize
 	@echo "Checker sanitize Compiled"
 
 valgrind_checker: checker

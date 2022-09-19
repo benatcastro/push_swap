@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 19:22:27 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:15:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_pa(t_data *data, bool print)
 {
 	t_stack	*aux;
 
+	if (!data->stack_b || data->sz_a == 0)
+		return ;
 	aux = data->stack_b;
 	data->stack_b = data->stack_b->next;
 	ft_lstadd_front(&data->stack_a, aux);
@@ -43,6 +45,8 @@ void	ft_pb(t_data *data, bool print)
 {
 	t_stack	*aux;
 
+	if (!data->stack_a || data->stack_b == 0)
+		return ;
 	aux = data->stack_a;
 	data->stack_a = data->stack_a->next;
 	ft_lstadd_front(&data->stack_b, aux);

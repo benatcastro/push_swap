@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:22:28 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 21:05:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:10:43 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,10 @@ char	*ft_append_char(char *str, char c)
 	str_len = ft_strlen(str) + 1;
 	tmp = ft_strdup(str);
 	free(str);
-	str = ft_calloc(str_len, sizeof(char));
+	str = ft_calloc(str_len + 1, sizeof(char));
 	ft_strlcpy(str, tmp, str_len);
 	free(tmp);
 	str[str_len - 1] = c;
-	str[str_len] = 0;
 	return (str);
 }
 
