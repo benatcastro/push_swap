@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/09 05:19:32 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/19 18:31:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 18:37:55 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,6 @@ static void	bubble_short(int *tab, size_t sz)
 	}
 }
 
-// static void	bubble_short_test(int *tab, size_t sz)
-// {
-// 	int32_t	tmp;
-
-// 	for (size_t step = 0; step < sz - 1; step++)
-// 	{
-// 		for (size_t i = 0; i < sz - step - 1; i++)
-// 		{
-// 			if (tab[i] > tab[i + 1])
-// 			{
-// 				tmp = tab[i];
-// 				tab[i] = tab[i + 1];
-// 				tab[i + 1] = tmp;
-// 			}
-// 		}
-// 	}
-// }
 
 static void	ft_set_keys(int *tab, t_data *data)
 {
