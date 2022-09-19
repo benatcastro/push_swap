@@ -89,9 +89,9 @@ sanitize_checker: push_swap
 	@$(CC) $(CFLAGS)$(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)_sanitize
 	@echo "Checker sanitize Compiled"
 
-valgrind_checker: checker
+valgrind_checker: bonus
 	@clear
-	@$(VALGRIND) ./$(CHECKER_NAME) 2 1
+	@$(VALGRIND) ./$(EXECS_DIR)$(CHECKER_NAME) 1
 
 tester:
 	@echo "Cloning testers..."
@@ -99,7 +99,6 @@ tester:
 	@git submodule update
 	@clear
 	@echo "Testers cloned!"
-
 
 run: all
 	@clear
