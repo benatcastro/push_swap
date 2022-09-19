@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:27:46 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 19:29:44 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:03:00 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_sa(t_stack **head_a, bool print)
 {
 	t_stack	*tmp;
 
-	if (!(*head_a)->next)
+	if (!(*head_a))
 		return ;
 	tmp = (*head_a);
 	(*head_a) = (*head_a)->next;
@@ -43,7 +43,7 @@ void	ft_sb(t_stack **head_b, bool print)
 {
 	t_stack	*tmp;
 
-	if (!(*head_b)->next)
+	if (!(*head_b))
 		return ;
 	tmp = (*head_b);
 	(*head_b) = (*head_b)->next;

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 19:45:30 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/17 19:23:33 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:00:07 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_ra(t_stack **head_a, bool print)
 	t_stack	*aux;
 	t_stack	*tail;
 
+	if (!(*head_a))
+		return ;
 	if (print)
 		ft_putstr_fd("ra\n", 1);
 	tail = ft_lastnode(head_a);
@@ -51,6 +53,8 @@ void	ft_rb(t_stack **head_b, bool print)
 	t_stack	*aux;
 	t_stack	*tail;
 
+	if (!(*head_b))
+		return ;
 	if (print)
 		ft_putstr_fd("rb\n", 1);
 	if (ft_lst_size(head_b) <= 2)

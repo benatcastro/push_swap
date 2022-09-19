@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:34:01 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/19 19:13:47 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 19:59:05 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	ft_rra(t_data *data, bool print)
 	t_stack	**stack;
 	t_stack	*aux;
 
+	if (!data->stack_a || data->sz_a == 0)
+		return ;
+	if (print)
+		ft_putstr_fd("rra\n", 1);
 	stack = &data->stack_a;
 	aux = *stack;
 	while (aux->next->next != NULL)
@@ -30,8 +34,6 @@ void	ft_rra(t_data *data, bool print)
 	aux->next->next = *stack;
 	*stack = aux->next;
 	aux->next = NULL;
-	if (print)
-		ft_putstr_fd("rra\n", 1);
 }
 
 /**
@@ -46,6 +48,10 @@ void	ft_rrb(t_data *data, bool print)
 	t_stack	**stack;
 	t_stack	*aux;
 
+	if (!data->stack_b || data->sz_b == 0)
+		return ;
+	if (print)
+		ft_putstr_fd("rrb\n", 1);
 	stack = &data->stack_b;
 	aux = *stack;
 	while (aux->next->next != NULL)
@@ -53,8 +59,6 @@ void	ft_rrb(t_data *data, bool print)
 	aux->next->next = *stack;
 	*stack = aux->next;
 	aux->next = NULL;
-	if (print)
-		ft_putstr_fd("rrb\n", 1);
 }
 
 /**

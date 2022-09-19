@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/17 21:24:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:06:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	check_moves(char *s, t_data *data)
 	else if (ft_strcmp(s, "sb\n"))
 		ft_sb(&data->stack_b, false);
 	else if (ft_strcmp(s, "ss\n"))
-		ft_ss(&data->stack_b, &data->stack_b, false);
+		ft_ss(&data->stack_a, &data->stack_b, false);
 	else if (ft_strcmp(s, "pa\n"))
 		ft_pa(data, false);
 	else if (ft_strcmp(s, "pb\n"))
