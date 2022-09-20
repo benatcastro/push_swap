@@ -24,13 +24,12 @@ INC_DIR = includes/
 LIB_DIR = libraries/
 PROJECT_DIR = $(SRC_DIR)$(NAME)/
 SORTERS_DIR = $(SRC_DIR)$(NAME)/sorters/
-CHECKER_DIR = $(SRC_DIR)/checker/
+CHECKER_DIR = $(SRC_DIR)checker/
 EXECS_DIR	= execs/
 
 
 #--------------------SOURCES-------------------------
-SOURCES =	push_swap		\
-			check_args		\
+SOURCES =	check_args		\
 			find_fncs		\
 			fncs_push		\
 			fncs_rev_rotate	\
@@ -40,6 +39,7 @@ SOURCES =	push_swap		\
 			list_utils		\
 			mv_nodes		\
 			stack_init		\
+			push_swap		\
 
 SOURCES_SORTERS =	defined_cases		\
 					defined_cases_utils	\
@@ -50,17 +50,20 @@ SOURCES_SORTERS =	defined_cases		\
 					sorter_logic		\
 
 SOURCES_CHECKER =	checker_utils_bonus	\
+					checker_bonus		\
 #---------------PREFIX and SUFFIX-------------------
 
-SRC = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
+#SRC = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
 
-SRC_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix .c, $(SOURCES_SORTERS)))
+#SRC_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix .c, $(SOURCES_SORTERS)))
 
-SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
+#SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
 
 PUSH_SWAP_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES)))
 
 PUSH_SWAP_SORTERS_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES_SORTERS)))
+
+CHECKER_OBJS = $(addprefix $(CHECKER_OBJ_DIR)$(OBJ_CHECKER), $(addsuffix .o, $(SOURCES_CHECKER)))
 
 #---------------------RULES---------------------------
 all: $(NAME)
@@ -71,11 +74,19 @@ $(PUSH_SWAP_OBJ_DIR)%.o: $(PROJECT_DIR)%.c
 	@mkdir -p $(PUSH_SWAP_OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
-$(PUSH_SWAP_OBJ_DIR)%.o: $(SORTERS_DIR)%.c
+
+push_swap: $(NAME)
+	@mkdir -p $(EXECS_DIR)
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)
+
+bonus_objs: $(CHECKER_OBJS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+
+$(CHECKER_OBJ_DIR)%.o: $(CHECKER_DIR)%.c
+	@mkdir -p $(CHECKER_OBJS)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
-$(PUSH_SWAP):
-	$(CC) (CFLAGS) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)/$(NAME)
+bonus: bonus_objs
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
 
 42lib: libft
 	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)/42lib/*.o
@@ -93,10 +104,6 @@ valgrind:
 	@clear
 	@$(VALGRIND) ./$(NAME) $(ARGS)
 
-bonus: push_swap
-	@mkdir -p $(EXECS_DIR)
-	@$(CC) $(CFLAGS) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)
-	@echo "Checker Compiled"
 
 sanitize_checker: push_swap
 	@$(CC) $(CFLAGS)$(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)_sanitize

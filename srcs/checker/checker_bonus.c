@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 02:00:37 by bena              #+#    #+#             */
-/*   Updated: 2022/09/19 20:06:38 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/20 01:29:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 /**
  * @brief
- * Prints the erro message and exits the program
+ * Prints the error oessage and exits the program
  * @param data
  */
 static void	print_error(t_data *data)
