@@ -62,7 +62,7 @@ SRC_DIR = ./
 
 all: $(OBJ)
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	$(CC) $(CC_FLAGS) -I $(INCLUDES) -c $< -o $@
+	@$(CC) $(CC_FLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 00:48:44 by bena              #+#    #+#             */
-/*   Updated: 2022/09/15 16:47:15 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/20 07:45:13 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 static void	swap_error(int64_t n)
 {
-	if (n > INT_MAX || n < INT_MIN)
+	if (n > INT_MAX)
 	{
-		ft_putstr_fd("Error int value ❌\n", 2);
+		ft_putstr_fd("Error\nInt value is greater than max int ❌\n", 2);
+		exit(EXIT_FAILURE);
+	}
+	else if (n < -2147483648)
+	{
+		ft_putstr_fd("Error\nInt value is lower than min int ❌\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	return ;
@@ -47,6 +52,6 @@ int	ft_atoi(const char *nptr)
 		nbr += (nptr[i] - '0');
 		i++;
 	}
-	swap_error(nbr);
+	swap_error(nbr * sign);
 	return (nbr * sign);
 }

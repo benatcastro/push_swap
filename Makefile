@@ -70,11 +70,13 @@ all: $(NAME)
 
 $(NAME): 42lib $(PUSH_SWAP_LOGIC_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
 	@mkdir -p $(EXECS_DIR)
-	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)
+	@$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)
+	@echo "Push_Swap Compiled!"
 
 $(PUSH_SWAP_OBJ_DIR)%.o: $(PROJECT_DIR)%.c
 	@mkdir -p $(PUSH_SWAP_OBJ_DIR)
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@clear
 
 $(PUSH_SWAP_OBJ_DIR)%.o: $(SORTERS_DIR)%.c
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
@@ -82,7 +84,8 @@ $(PUSH_SWAP_OBJ_DIR)%.o: $(SORTERS_DIR)%.c
 
 bonus: $(CHECKER_LOGIC_OBJS) $(PUSH_SWAP_OBJS) 42lib
 	@mkdir -p $(EXECS_DIR)
-	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
+	@$(CC) $(CFLAGS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
+	@echo "Checker Compiled!"
 
 $(CHECKER_OBJ_DIR)%.o: $(CHECKER_DIR)%.c
 	@mkdir -p $(CHECKER_OBJ_DIR)
