@@ -123,7 +123,6 @@ tester:
 	@echo "Cloning testers..."
 	@git submodule init --quiet
 	@git submodule update --quiet
-	@clear
 	@echo "Testers cloned!"
 
 run: all
