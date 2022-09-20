@@ -9,7 +9,7 @@ ARGS		=	10 10
 #---------GCC and FLAGS----------
 LIB_FLAG	= $(LIB_DIR)$(LIB_NAME)
 INC_FLAG	= -I $(INC_DIR)
-CFLAGS 		= -Wall -Wextra -Werror #$(SANITIZE)
+CFLAGS 		= -Wall -Wextra -Werror
 CC 	 		= gcc
 AR			= ar rc
 SANITIZE 	= -fsanitize=address -g3
@@ -88,13 +88,6 @@ $(CHECKER_OBJ_DIR)%.o: $(CHECKER_DIR)%.c
 	@mkdir -p $(CHECKER_OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
-#$(CHECKER): $(CHECKER_OBJS)
-#	$(CC) $(CFLAGS) $() $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
-
-
-
-#$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
-
 42lib: libft
 	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)/42lib/*.o
 	@ranlib $(LIB_DIR)$(LIB_NAME)
@@ -111,10 +104,13 @@ valgrind:
 	@clear
 	@$(VALGRIND) ./$(NAME) $(ARGS)
 
+sanitize: $(NAME)
+	$(CC) $(CFLAGS) $(SANITIZE) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)_sanitize
 
-sanitize_checker: push_swap
-	@$(CC) $(CFLAGS)$(SANITIZE) $(SRC) $(CHECKER_DIR)main_bonus.c $(SRC_SORTERS) $(SRC_CHECKER) $(LIB_FLAGS) -o $(EXECS_DIR)$(CHECKER_NAME)_sanitize
-	@echo "Checker sanitize Compiled"
+
+sanitize_checker: bonus
+	$(CC) $(CFLAGS) $(SANITIZE) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)_sanitize
+
 
 valgrind_checker: bonus
 	@clear
