@@ -121,7 +121,7 @@ valgrind_checker: bonus
 
 tester:
 	@echo "Cloning testers..."
-	@git submodule init
+	@git submodule init --quiet
 	@git submodule update --quiet
 	@clear
 	@echo "Testers cloned!"
