@@ -53,40 +53,47 @@ SOURCES_CHECKER =	checker_utils_bonus	\
 					checker_bonus		\
 #---------------PREFIX and SUFFIX-------------------
 
-#SRC = $(addprefix $(PROJECT_DIR), $(addsuffix .c, $(SOURCES)))
 
-#SRC_SORTERS = $(addprefix $(SORTERS_DIR), $(addsuffix .c, $(SOURCES_SORTERS)))
-
-#SRC_CHECKER = $(addprefix $(CHECKER_DIR), $(addsuffix .c, $(SOURCES_CHECKER)))
-
-PUSH_SWAP_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES)))
+PUSH_SWAP_LOGIC_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES)))
 
 PUSH_SWAP_SORTERS_OBJS = $(addprefix $(PUSH_SWAP_OBJ_DIR)$(OBJ_PUSH_SWAP), $(addsuffix .o, $(SOURCES_SORTERS)))
 
-CHECKER_OBJS = $(addprefix $(CHECKER_OBJ_DIR)$(OBJ_CHECKER), $(addsuffix .o, $(SOURCES_CHECKER)))
+CHECKER_LOGIC_OBJS = $(addprefix $(CHECKER_OBJ_DIR)$(OBJ_CHECKER), $(addsuffix .o, $(SOURCES_CHECKER)))
+
+PUSH_SWAP_OBJS += $(PUSH_SWAP_LOGIC_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+
+CHECKER_OBJS += $(filter-out $(PUSH_SWAP_OBJ_DIR)push_swap.o, $(PUSH_SWAP_OBJS)) $(CHECKER_LOGIC_OBJS)
+
 
 #---------------------RULES---------------------------
 all: $(NAME)
 
-$(NAME): 42lib $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+$(NAME): 42lib $(PUSH_SWAP_LOGIC_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+	@mkdir -p $(EXECS_DIR)
+	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)
 
 $(PUSH_SWAP_OBJ_DIR)%.o: $(PROJECT_DIR)%.c
 	@mkdir -p $(PUSH_SWAP_OBJ_DIR)
-	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
+
+$(PUSH_SWAP_OBJ_DIR)%.o: $(SORTERS_DIR)%.c
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
 
-push_swap: $(NAME)
+bonus: $(CHECKER_LOGIC_OBJS) $(PUSH_SWAP_OBJS) 42lib
 	@mkdir -p $(EXECS_DIR)
-	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)
-
-bonus_objs: $(CHECKER_OBJS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS)
+	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
 
 $(CHECKER_OBJ_DIR)%.o: $(CHECKER_DIR)%.c
-	@mkdir -p $(CHECKER_OBJS)
+	@mkdir -p $(CHECKER_OBJ_DIR)
 	$(CC) $(CFLAGS) -I $(INC_DIR) -c $< -o $@
 
-bonus: bonus_objs
-	$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
+#$(CHECKER): $(CHECKER_OBJS)
+#	$(CC) $(CFLAGS) $() $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
+
+
+
+#$(CC) $(CFLAGS) $(PUSH_SWAP_OBJS) $(PUSH_SWAP_SORTERS_OBJS) $(CHECKER_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(CHECKER_NAME)
 
 42lib: libft
 	@$(AR) $(LIB_DIR)$(LIB_NAME) $(OBJ_DIR)/42lib/*.o
