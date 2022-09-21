@@ -5,7 +5,7 @@ LIB_NAME 	= 42lib.a
 LIBFT 		= libft
 GNL 		= gnl
 PRINTF 		= ft_printf
-ARGS		=	10 10
+ARGS		=	5 4 3 2 67 10 124 6543 568
 #---------GCC and FLAGS----------
 LIB_FLAG	= $(LIB_DIR)$(LIB_NAME)
 INC_FLAG	= -I $(INC_DIR)
@@ -105,7 +105,7 @@ mk_dirs:
 
 valgrind:
 	@clear
-	@$(VALGRIND) ./$(NAME) $(ARGS)
+	@$(VALGRIND) ./$(EXECS_DIR)$(NAME) $(ARGS)
 
 sanitize: $(NAME)
 	$(CC) $(CFLAGS) $(SANITIZE) $(PUSH_SWAP_OBJS) $(INC_FLAG) $(LIB_FLAG) -o $(EXECS_DIR)$(NAME)_sanitize
@@ -117,7 +117,7 @@ sanitize_checker: bonus
 
 valgrind_checker: bonus
 	@clear
-	@$(VALGRIND) ./$(EXECS_DIR)$(CHECKER_NAME) 1
+	@$(VALGRIND) ./$(EXECS_DIR)$(CHECKER_NAME) 2 1
 
 tester:
 	@echo "Cloning testers..."
